@@ -1,0 +1,65 @@
+Name     PD1601 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D30   ;
+Device   g22v10 ;
+Format   j ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = CLK                     ; /* Write                           */ 
+PIN 2   = A0                      ; /* Address 0                       */
+PIN 3   = A1                      ; /* Address 1                       */
+PIN 4   = A2                      ; /* Address 2                       */ 
+PIN 23  = A3                      ; /* Address 3                       */ 
+PIN 5   = I0                      ; /* Input 0                         */ 
+PIN 6   = I1                      ; /* Input 1                         */ 
+PIN 7   = I2                      ; /* Input 2                         */ 
+PIN 8   = I3                      ; /* Input 3                         */ 
+PIN 9   = I4                      ; /* Input 4                         */ 
+PIN 10  = I5                      ; /* Input 5                         */
+PIN 11  = I6                      ; /* Input 6                         */
+PIN 13  = I7                      ; /* Input 7                         */ 
+PIN 14  = !CE                     ; /* Chip Enable                     */ 
+
+/* *************** OUTPUT PINS *********************/
+
+PIN 22  = !D0                     ; /* Output 0                        */ 
+PIN 21  = !D1                     ; /* Output 1                        */ 
+PIN 20  = !D2                     ; /* Output 2                        */ 
+PIN 19  = !D3                     ; /* Output 3                        */
+PIN 18  = !D4                     ; /* Output 4                        */ 
+PIN 17  = !D5                     ; /* Output 5                        */ 
+PIN 16  = !D6                     ; /* Output 6                        */ 
+PIN 15  = !D7                     ; /* Output 7                        */
+
+FIELD ADDR   = [A3..0];
+FIELD INPUT  = [I7..0];
+FIELD OUTPUT = [D7..0];
+
+A3.OE = 'b'0;
+CE.OE = 'b'0;
+
+$REPEAT i=[0..7]
+
+  D{i}.OE = 'b'1;
+  D{i}.SP = 'b'0;
+  D{i}.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D{i}.D = CE & ADDR:{i} & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D{i}.D = CE & ADDR:[8..F] & I{i};
+
+  /* Store bits if addres not match */
+  APPEND D{i}.D = CE & !(ADDR:{i} # ADDR:[8..F]) & D{i};
+
+  /* Store bits if no Chip Enable */
+  APPEND D{i}.D = !CE & D{i};                              
+
+$REPEND

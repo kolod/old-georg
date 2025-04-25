@@ -1,0 +1,106 @@
+%SIGNAL
+PIN   9 =  A20 
+PIN   8 =  A21 
+PIN   7 =  A22 
+PIN   6 =  A23 
+PIN   5 =  A28 
+PIN   4 =  A29 
+PIN   3 =  A30 
+PIN   2 =  A31 
+PIN  11 = !ALE 
+PIN  21 =  BUS 
+PIN  16 = !INPUT 
+PIN  20 =  IOM 
+PIN  15 = !LED 
+PIN  22 = !MCE0 
+PIN  14 = !MCE1 
+PIN  23 = !MCE2 
+PIN  19 =  NC 
+PIN  17 = !OUTPUT 
+PIN  13 = !READ 
+PIN  10 =  RESET 
+PIN  18 =  SIZE 
+PIN   1 = !WRITE 
+%END
+
+%FIELD
+FIELD ADDR = A31,A30,A29,A28,A27,A26,A25,A24,A23,A22,A21,A20,A19,A18,A17,A16,A15,A14,A13,A12,A11,A10,A9,A8,A7,A6,A5,A4,A3,A2,A1,A0
+%END
+
+%EQUATION
+BUS =>
+    !A22 & !A28 & A29 & A30 & A31 & !ALE & !RESET
+  # !A22 & !A28 & A29 & A30 & A31 & !RESET & !WRITE
+  # !A22 & !A28 & A29 & A30 & A31 & !READ & !RESET
+
+INPUT =>
+    A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !ALE & !RESET
+  # A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !RESET & !WRITE
+  # A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !READ & !RESET
+
+IOM =>
+    !A22 & A23 & !A28 & A29 & A30 & A31 & !ALE & !RESET
+  # !A22 & A23 & !A28 & A29 & A30 & A31 & !RESET & !WRITE
+  # !A22 & A23 & !A28 & A29 & A30 & A31 & !READ & !RESET
+
+LED =>
+    !A20 & A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !ALE & !RESET
+  # !A20 & A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !RESET & !WRITE
+  # !A20 & A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !READ & !RESET
+
+MCE0 =>
+    !A21 & !A22 & !A23 & !A28 & !A29 & !A30 & A31 & !RESET & SIZE
+
+MCE1 =>
+    !A20 & !A21 & !A22 & !A23 & !A28 & !A29 & !A30 & A31 & !RESET & !SIZE
+  # A21 & !A22 & !A23 & !A28 & !A29 & !A30 & A31 & !RESET & SIZE
+
+MCE2 =>
+    A28 & A29 & A30 & !A31 & !ALE & !RESET
+  # A28 & A29 & A30 & !A31 & !RESET & !WRITE
+  # A28 & A29 & A30 & !A31 & !READ & !RESET
+
+NC =>
+    0 
+
+OUTPUT =>
+    !A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !ALE & !RESET
+  # !A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !RESET & !WRITE
+  # !A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !READ & !RESET
+
+RW =>
+    ALE
+  # READ
+  # WRITE
+
+SIZE.oe  =>
+    0 
+
+BUS.oe  =>
+    1 
+
+INPUT.oe  =>
+    1 
+
+IOM.oe  =>
+    1 
+
+LED.oe  =>
+    1 
+
+MCE0.oe  =>
+    1 
+
+MCE1.oe  =>
+    1 
+
+MCE2.oe  =>
+    1 
+
+NC.oe  =>
+    1 
+
+OUTPUT.oe  =>
+    1 
+
+%END

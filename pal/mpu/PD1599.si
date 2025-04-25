@@ -1,0 +1,22 @@
+Name     PD1599;
+PartNo   GAL22V10D;
+Date     20.03.2025;
+Revision 02;
+Designer Oleksandr Kolodkin;
+Company  ZTR;
+Assembly TPU 210066/00/02;
+Location D25;
+Device   g20v8as;
+
+
+ORDER: RESET_FROM_BUTTON, RESET_FROM_PC, INIT, RESET; 
+
+
+VECTORS:
+00HL
+10LH
+00HL
+01HH
+00HL
+11LH
+00HL

@@ -1,0 +1,118 @@
+Name     PD1579 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 01 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly MPUS 210040/00/01 ;
+Location D19 ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = CLK                     ; /* CPU Clock                       */ 
+PIN 3   = !ACKN                   ; /*                                 */ 
+PIN 4   = A13                     ; /*                                 */ 
+PIN 5   = A14                     ; /*                                 */ 
+PIN 6   = A15                     ; /*                                 */ 
+PIN 7   = MODE0                   ; /*                                 */ 
+PIN 23  = MODE1                   ; /*                                 */ 
+PIN 8   = S0                      ; /*                                 */ 
+PIN 9   = S1                      ; /*                                 */ 
+PIN 10  = IOM                     ; /*                                 */ 
+PIN 11  = MWAIT0                  ; /*                                 */ 
+PIN 16  = MWAIT1                  ; /*                                 */ 
+PIN 13  = TIOUT                   ; /*                                 */
+
+/* *************** OUTPUT PINS *********************/
+PIN 21  = !ROM0_CS                ; /* ROM D21                         */ 
+PIN 20  = !ROM1_CS                ; /* ROM D24 (not soldered)          */ 
+PIN 22  = !RAM0_CS                ; /* RAM D26                         */ 
+PIN 18  = !RAM1_CS                ; /* RAM D29                         */ 
+PIN 17  = !BSRE                   ; /* Multibus                        */ 
+PIN 19  = !READY                  ; /*                                 */ 
+PIN 14  = STATE0                  ; /* Internal state                  */ 
+PIN 15  = STATE1                  ; /* Internal state                  */ 
+
+FIELD ADDR  = [A15..0];
+FIELD MODE  = [MODE1..0];
+FIELD STATE = [STATE1..0];
+FIELD S     = [S1..0];
+
+/* CPU State */
+$DEFINE HALT  0 /* Processor halted         */
+$DEFINE WRITE 1 /* Write data to memory     */
+$DEFINE READ  2 /* Read data from memory    */
+$DEFINE FETCH 3 /* Fetch opcode from memory */
+
+STATE0.ar = 'b'0;
+STATE0.sp = 'b'0;
+STATE1.ar = 'b'0;
+STATE1.sp = 'b'0;
+
+SEQUENCE STATE {
+  PRESENT 0
+    IF !MODE0 & !MODE1 NEXT 1;
+    IF  MODE0 & !MODE1 NEXT 2;
+    IF !MODE0 &  MODE1 NEXT 3;
+    DEFAULT NEXT 0;
+
+  PRESENT 1
+    IF MODE0 & MODE1 NEXT 0;
+    DEFAULT NEXT 1;
+
+  PRESENT 2
+    IF MODE0 & MODE1 NEXT 0;
+    DEFAULT NEXT 2;
+
+  PRESENT 3
+    IF MODE0 & MODE1 NEXT 0;
+    DEFAULT NEXT 3;
+}
+
+READY.ar = 'b'0;
+READY.sp = 'b'0;
+SEQUENCE READY {
+  PRESENT 0
+    IF BSRE & !ACKN NEXT 1;
+    DEFAULT NEXT 0;
+
+  PRESENT 1
+    IF !BSRE NEXT 0;
+    IF ACKN NEXT 0;
+    DEFAULT NEXT 1;
+}
+
+CONDITION {
+  IF (IOM:0 & STATE:0 & MODE:3 & ADDR:[0000..7FFF]) OUT ROM0_CS;
+  IF (IOM:0 & STATE:0 & MODE:3 & ADDR:[8000..FFFF]) OUT RAM1_CS;
+
+  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[0000..7FFF]) OUT ROM0_CS; 
+  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[8000..BFFF]) OUT ROM1_CS;
+  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[C000..DFFF]) OUT RAM1_CS; 
+  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[E000..FFFF]) OUT BSRE; 
+  IF (IOM:0 & STATE:1 & MODE:1 & ADDR:[0000..3FFF]) OUT ROM0_CS; 
+  IF (IOM:0 & STATE:1 & MODE:1 & ADDR:[4000..FFFF]) OUT RAM1_CS; 
+  IF (IOM:0 & STATE:1 & MODE:2 & ADDR:[0000..3FFF]) OUT ROM0_CS;
+  IF (IOM:0 & STATE:1 & MODE:2 & ADDR:[4000..7FFF]) OUT RAM1_CS; 
+  IF (IOM:0 & STATE:1 & MODE:2 & ADDR:[8000..FFFF]) OUT RAM0_CS;  
+
+  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[0000..1FFF]) OUT ROM0_CS;
+  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[2000..5FFF]) OUT ROM1_CS;
+  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[6000..7FFF]) OUT RAM1_CS;
+  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[8000..FFFF]) OUT BSRE; 
+  IF (IOM:0 & STATE:2 & MODE:1 & ADDR:[0000..5FFF]) OUT ROM0_CS;
+  IF (IOM:0 & STATE:2 & MODE:1 & ADDR:[6000..7FFF]) OUT RAM1_CS;
+  IF (IOM:0 & STATE:2 & MODE:1 & ADDR:[8000..FFFF]) OUT BSRE; 
+  IF (IOM:0 & STATE:2 & MODE:2 & ADDR:[0000..1FFF]) OUT ROM0_CS;
+  IF (IOM:0 & STATE:2 & MODE:2 & ADDR:[2000..7FFF]) OUT RAM1_CS;
+  IF (IOM:0 & STATE:2 & MODE:2 & ADDR:[8000..FFFF]) OUT BSRE; 
+
+  IF (IOM:0 & STATE:3 & MODE:0 & ADDR:[0000..7FFF]) OUT RAM0_CS;
+  IF (IOM:0 & STATE:3 & MODE:0 & ADDR:[8000..FFFF]) OUT BSRE;
+  IF (IOM:0 & STATE:3 & MODE:1 & ADDR:[0000..7FFF]) OUT RAM0_CS;
+  IF (IOM:0 & STATE:3 & MODE:1 & ADDR:[8000..DFFF]) OUT RAM1_CS;
+  IF (IOM:0 & STATE:3 & MODE:1 & ADDR:[E000..FFFF]) OUT BSRE;
+  IF (IOM:0 & STATE:3 & MODE:2 & ADDR:[0000..7FFF]) OUT RAM0_CS;
+  IF (IOM:0 & STATE:3 & MODE:2 & ADDR:[8000..FFFF]) OUT RAM1_CS;
+  IF (IOM:1 & S:[READ, WRITE]  & ADDR:[4000..FFFF]) OUT BSRE;
+}

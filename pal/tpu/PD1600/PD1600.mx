@@ -1,0 +1,44 @@
+Name     PD1600 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly MEP 210039/00/01 ;
+Location D31 ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = !RD                     ; /* Read                            */ 
+PIN 2   = I0                      ; /* Input 0                         */
+PIN 3   = I1                      ; /* Input 1                         */
+PIN 4   = I2                      ; /* Input 2                         */ 
+PIN 5   = I3                      ; /* Input 3                         */ 
+PIN 6   = I4                      ; /* Input 4                         */ 
+PIN 7   = I5                      ; /* Input 5                         */ 
+PIN 8   = I6                      ; /* Input 6                         */ 
+PIN 9   = I7                      ; /* Input 7                         */ 
+PIN 10  = I8                      ; /* Input 8                         */
+PIN 11  = I9                      ; /* Input 9                         */
+PIN 13  = !CE                     ; /* Chip Enable                     */ 
+
+/* *************** OUTPUT PINS *********************/
+
+PIN 23  = D0                      ; /* Output 0                        */ 
+PIN 22  = D1                      ; /* Output 1                        */ 
+PIN 21  = D2                      ; /* Output 2                        */ 
+PIN 20  = D3                      ; /* Output 3                        */
+PIN 19  = D4                      ; /* Output 4                        */ 
+PIN 18  = D5                      ; /* Output 5                        */ 
+PIN 17  = D6                      ; /* Output 6                        */ 
+PIN 16  = D7                      ; /* Output 7                        */
+PIN 15  = D8                      ; /* Output 8                        */
+PIN 14  = D9                      ; /* Output 9                        */
+
+FIELD INPUT  = [I9..0];
+FIELD OUTPUT = [D9..0];
+
+OUTPUT.OE = CE;
+OUTPUT.D  = INPUT & CE;
+OUTPUT.SP = 'b'0;
+OUTPUT.AR = 'b'0;

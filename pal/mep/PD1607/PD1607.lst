@@ -1,0 +1,63 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PD1607.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Apr 09 08:17:11 2025
+
+  1:Name     PD1607 ;
+  2:PartNo   GAL22V10D ;
+  3:Date     20.03.2025 ;
+  4:Revision 02 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly MEP 210039/00/01 ;
+  8:Location D7   ;
+  9:Device   g22v10 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN 1   = !BREQ0                  ; /*                                 */ 
+ 13:PIN 2   = !BREQ1                  ; /*                                 */
+ 14:PIN 3   = !BREQ2                  ; /*                                 */
+ 15:PIN 4   = !BREQ3                  ; /*                                 */ 
+ 16:PIN 5   = !BREQ4                  ; /*                                 */ 
+ 17:PIN 6   = !BREQ5                  ; /*                                 */ 
+ 18:PIN 7   = !BREQ6                  ; /*                                 */ 
+ 19:PIN 8   = !BREQ7                  ; /*                                 */ 
+ 20:PIN 9   = !ADR16                  ; /*                                 */ 
+ 21:PIN 10  = !ADR17                  ; /*                                 */ 
+ 22:
+ 23:/* *************** OUTPUT PINS *********************/
+ 24:
+ 25:PIN 23  = !BPR0                   ; /*                                 */ 
+ 26:PIN 22  = !BPR1                   ; /*                                 */ 
+ 27:PIN 21  = !BPR2                   ; /*                                 */ 
+ 28:PIN 20  = !BPR3                   ; /*                                 */
+ 29:PIN 19  = !BPR4                   ; /*                                 */ 
+ 30:PIN 18  = !BPR5                   ; /*                                 */ 
+ 31:PIN 17  = !BPR6                   ; /*                                 */ 
+ 32:PIN 16  = !BPR7                   ; /*                                 */
+ 33:PIN 15  = AD17                    ; /*                                 */
+ 34:PIN 14  = AD16                    ; /*                                 */
+ 35:
+ 36:/* Multibus master priority */
+ 37:
+ 38:BPR0 = BREQ0;
+ 39:BPR1 = !BREQ0 & BREQ1;
+ 40:BPR2 = !BREQ0 & !BREQ1 & BREQ2;
+ 41:BPR3 = !BREQ0 & !BREQ1 & !BREQ2 & BREQ3;
+ 42:BPR4 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & BREQ4;
+ 43:BPR5 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & !BREQ4 & BREQ5;
+ 44:BPR6 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & !BREQ4 & !BREQ5 & BREQ6;
+ 45:BPR7 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & !BREQ4 & !BREQ5 & !BREQ6 & BREQ7;
+ 46:
+ 47:/* Address lines inverter */
+ 48:
+ 49:AD16 = ADR16;
+ 50:AD17 = ADR17;
+ 51:
+
+
+
+Jedec Fuse Checksum       (71c8)
+Jedec Transmit Checksum   (9cca)

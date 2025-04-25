@@ -1,0 +1,63 @@
+Name     PD1599 ;
+PartNo   GAL20V8B ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D25   ;
+Device   g20v8ms ; 
+Format   j ;
+
+/* g20v8ms - registered   */
+/* g20v8ma - complex      */
+/* g20v8as - simple       */
+
+/* *************** INPUT PINS *********************/
+PIN 1   = CLK                     ; /*                                 */ 
+PIN 2   = !BUS_OE                 ; /* from PD1604 pin 18              */
+PIN 3   = BUS_EN                  ; /* from PD1603 pin 21              */
+PIN 4   = IOM                     ; /*                                 */ 
+PIN 5   = !WRITE                  ; /*                                 */ 
+PIN 6   = !READ                   ; /*                                 */ 
+PIN 7   = RESET_FROM_PC           ; /*                                 */ 
+PIN 8   = RESET_FROM_BUTTON       ; /*                                 */ 
+PIN 9   = BOOT_FROM_ROM           ; /*                                 */ 
+PIN 10  = X5                      ; /*                                 */ 
+PIN 13  = OE                      ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN 15  = !MRDC                   ; /*                                 */ 
+PIN 16  = !MWTC                   ; /*                                 */ 
+PIN 17  = !IORC                   ; /*                                 */ 
+PIN 18  = !IOWC                   ; /*                                 */ 
+PIN 19  = RESET                   ; /*                                 */ 
+PIN 20  = BUS_DIR                 ; /*                                 */ 
+PIN 21  = INIT                    ; /*                                 */ 
+
+/* ************** NOT CONNECTED ********************/
+PIN 11  = NC1                     ; /* I10                             */ 
+PIN 14  = NC2                     ; /* I12                             */ 
+PIN 22  = NC3                     ; /* I/07                            */ 
+PIN 23  = NC4                     ; /* I13                             */ 
+
+NC3    = 'b'0;
+NC3.OE = 'b'0;
+
+RESET.D   = RESET_FROM_PC # RESET_FROM_BUTTON;
+INIT.D    = !RESET_FROM_BUTTON & !RESET_FROM_PC;
+
+/* 1 */
+MRDC.D    = BUS_EN & !IOM & READ;  
+MWTC.D    = BUS_OE & !IOM & WRITE; 
+IORC.D    = BUS_EN & IOM & READ;   
+IOWC.D    = BUS_OE & IOM & WRITE;  
+BUS_DIR.D = BUS_OE & READ;         
+
+/* 2
+MRDC.D    = (BUS_OE # BUS_EN) & !IOM & READ;  
+MWTC.D    = (BUS_OE # BUS_EN) & !IOM & WRITE; 
+IORC.D    = (BUS_OE # BUS_EN) & IOM & READ;   
+IOWC.D    = (BUS_OE # BUS_EN) & IOM & WRITE;  
+BUS_DIR.D = (BUS_OE # BUS_EN) & !READ;         
+*/

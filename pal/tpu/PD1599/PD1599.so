@@ -1,0 +1,108 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Fri Apr 18 11:39:45 2025
+
+LISTING FOR SIMULATION FILE: PD1599.si
+
+   1: Name     PD1599;
+   2: PartNo   GAL20V8B;
+   3: Date     20.03.2025;
+   4: Revision 02;
+   5: Designer Oleksandr Kolodkin;
+   6: Company  ZTR;
+   7: Assembly TPU 210066/00/02;
+   8: Location D25;
+   9: Device   g20v8ms;
+  10: 
+  11: 
+  12: ORDER: CLK, RESET_FROM_PC, RESET_FROM_BUTTON, RESET, INIT; 
+  13: 
+  14: 
+
+==============
+        R     
+       RE     
+       ES     
+       SE     
+       ET     
+       T_     
+       _F     
+       FR     
+       RO     
+       OMR    
+       M_EI   
+      C_BSN   
+      LPUEI   
+      KCTTT   
+==============
+0001: 000XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+
+0002: 100XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+
+0003: 010XX
+         ^^
+[0019sa] user expected (H) for RESET
+[0019sa] user expected (H) for INIT
+
+0004: 110XX
+         ^^
+[0019sa] user expected (H) for RESET
+[0019sa] user expected (H) for INIT
+
+0005: 000XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+
+0006: 100XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+
+0007: 001XX
+         ^^
+[0019sa] user expected (H) for RESET
+[0019sa] user expected (L) for INIT
+
+0008: 101XX
+         ^^
+[0019sa] user expected (H) for RESET
+[0019sa] user expected (L) for INIT
+
+0009: 000XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+
+0010: 100XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+
+0011: 011XX
+         ^^
+[0019sa] user expected (H) for RESET
+[0019sa] user expected (L) for INIT
+
+0012: 111XX
+         ^^
+[0019sa] user expected (H) for RESET
+[0019sa] user expected (L) for INIT
+
+0013: 000XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+
+0014: 100XX
+         ^^
+[0019sa] user expected (L) for RESET
+[0019sa] user expected (H) for INIT
+

@@ -1,0 +1,219 @@
+{COMPONENT F:\PAL\MPU\PD1604.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Mon Mar 31 10:09:04 2025 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P PCLK {Pt "INPUT"}{Lq 0}{Ploc 100 320}}
+   {P A31 {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
+   {P A30 {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P A29 {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P A28 {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P A23 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P A22 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P A21 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P A20 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P RESET {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P ALE {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P READ {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P WRITE {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P BUS_OE {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P MEM_RF {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P P15 {Pt "I/O"}{Lq 0}{Ploc 300 20}}
+   {P P16 {Pt "I/O"}{Lq 0}{Ploc 300 40}}
+   {P P17 {Pt "I/O"}{Lq 0}{Ploc 300 60}}
+   {P WAIT {Pt "I/O"}{Lq 0}{Ploc 300 80}}
+   {P T0 {Pt "OUTPUT"}{Lq 0}{Ploc 300 100}}
+   {P T1 {Pt "OUTPUT"}{Lq 0}{Ploc 300 120}}
+   {P T2 {Pt "OUTPUT"}{Lq 0}{Ploc 300 140}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 200 350}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 330}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 290}
+   {Pnl 120 270}
+   {Pnl 120 250}
+   {Pnl 120 230}
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 280 30}
+   {Pnl 280 50}
+   {Pnl 280 70}
+   {Pnl 280 90}
+   {Pnl 280 110}
+   {Pnl 280 130}
+   {Pnl 280 150}
+
+   {Sd A 1 2 3 4 5 6 7 8 9 10 11 13 14 18 20 15 16 17 19 21 22 23}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 340 270 0}
+   {L 130 320 100 320}
+   {L 130 330 140 320 130 310}
+   {L 130 280 100 280}
+   {L 130 260 100 260}
+   {L 130 240 100 240}
+   {L 130 220 100 220}
+   {L 130 200 100 200}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 270 20 300 20}
+   {L 270 40 300 40}
+   {L 270 60 300 60}
+   {L 270 80 300 80}
+   {L 270 100 300 100}
+   {L 270 120 300 120}
+   {L 270 140 300 140}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "PCLK" 140 320}
+   {T "A31" 140 280}
+   {T "A30" 140 260}
+   {T "A29" 140 240}
+   {T "A28" 140 220}
+   {T "A23" 140 200}
+   {T "A22" 140 180}
+   {T "A21" 140 160}
+   {T "A20" 140 140}
+   {T "RESET" 140 120}
+   {T "ALE" 140 100}
+   {T "READ" 140 80}
+   {T "WRITE" 140 60}
+   {T "BUS_OE" 140 40}
+   {T "MEM_RF" 140 20}
+   [Tj "RC"]
+   {T "P15" 260 20}
+   {T "P16" 260 40}
+   {T "P17" 260 60}
+   {T "WAIT" 260 80}
+   {T "T0" 260 100}
+   {T "T1" 260 120}
+   {T "T2" 260 140}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G22V10" 200 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD F:\PAL\MPU\PD1604 200 340}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N PCLK
+   }
+   {N A31
+   }
+   {N A30
+   }
+   {N A29
+   }
+   {N A28
+   }
+   {N A23
+   }
+   {N A22
+   }
+   {N A21
+   }
+   {N A20
+   }
+   {N RESET
+   }
+   {N ALE
+   }
+   {N READ
+   }
+   {N WRITE
+   }
+   {N BUS_OE
+   }
+   {N MEM_RF
+   }
+   {N P15
+   }
+   {N P16
+   }
+   {N P17
+   }
+   {N WAIT
+   }
+   {N T0
+   }
+   {N T1
+   }
+   {N T2
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

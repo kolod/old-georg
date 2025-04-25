@@ -1,0 +1,19 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PD1597.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Apr 09 08:17:21 2025
+
+  1:Name     PD1599 ;
+  2:PartNo   GAL22V10D ;
+  3:Date     20.03.2025 ;
+  4:Revision 02 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly TPU 210066/00/02 ;
+  8:Location D23   ;
+  9:Device   g20v8ms ;
+ 10:Format   j ;
+ 11:
+ 12:

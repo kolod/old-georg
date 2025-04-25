@@ -1,0 +1,35 @@
+#WAVEFORM
+#H Name     test;
+#H PartNo   GAL22V10D;
+#H Date     20.03.2025;
+#H Revision 01;
+#H Designer Oleksandr Kolodkin;
+#H Company  ZTR;
+#H Assembly MPUS 210040/00/01;
+#H Location D19;
+#H Device   g22v10;
+#H 
+#H 
+#H ORDER: BSRE, ACKN, READY; 
+#H 
+#H 
+#V 0001 11L
+#E 0021 1
+#E 0019 1 READY
+
+#V 0002 **L
+#E 0021 *
+#E 0021 *
+
+#V 0003 **L
+#E 0021 *
+#E 0021 *
+
+#V 0004 **L
+#E 0021 *
+#E 0021 *
+
+#V 0005 **L
+#E 0021 *
+#E 0021 *
+

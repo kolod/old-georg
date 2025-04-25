@@ -1,0 +1,156 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "TPU-PD1597",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1597\\PD1597.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1598",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1598\\PD1598.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1599",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1599\\PD1599.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1599-v2",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1599\\PD1599-v2.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1600",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1600\\PD1600.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1601",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1601\\PD1601.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1602",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1602\\PD1602.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1603",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1603\\PD1603.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU-PD1604",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\tpu\\PD1604\\PD1604.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "MPU-PD1579",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\mpu\\PD1579\\PD1579.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "MPU-PD1579-test",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\mpu\\PD1579\\test\\test.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "MPU-PD1566",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\mpu\\PD1566\\PD1566.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "MEP-PD1607",
+            "type": "shell",
+            "command": "C:\\Wincupl\\Shared\\cupl.exe -m1lxfjnabes -u C:\\Wincupl\\Shared\\cupl.dl .\\mep\\PD1607\\PD1607.pld",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "TPU",
+            "type": "shell",
+            "dependsOn": ["TPU-PD1597", "TPU-PD1598", "TPU-PD1599", "TPU-PD1600", "TPU-PD1601", "TPU-PD1602", "TPU-PD1603", "TPU-PD1604"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "MPU",
+            "type": "shell",
+            "dependsOn": ["MPU-PD1579", "MPU-PD1566"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+        
+    ]
+}

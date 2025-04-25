@@ -1,0 +1,29 @@
+Name     test;
+PartNo   GAL22V10D;
+Date     20.03.2025;
+Revision 01;
+Designer Oleksandr Kolodkin;
+Company  ZTR;
+Assembly MPUS 210040/00/01;
+Location D19;
+Device   g22v10;
+
+
+ORDER: BSRE, ACKN, READY; 
+
+
+VECTORS:
+/*
+C11H
+C01L
+C01L
+C11H
+C01L
+C00H
+C11H
+*/
+111
+***
+***
+***
+***

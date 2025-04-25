@@ -1,0 +1,130 @@
+%SIGNAL
+PIN   4 =  A13 
+PIN   5 =  A14 
+PIN   6 =  A15 
+PIN   3 = !ACKN 
+PIN  17 = !BSRE 
+PIN   1 =  CLK 
+PIN  10 =  IOM 
+PIN   7 =  MODE0 
+PIN  23 =  MODE1 
+PIN  11 =  MWAIT0 
+PIN  16 =  MWAIT1 
+PIN  22 = !RAM0_CS 
+PIN  18 = !RAM1_CS 
+PIN  19 = !READY 
+PIN  21 = !ROM0_CS 
+PIN  20 = !ROM1_CS 
+PIN   8 =  S0 
+PIN   9 =  S1 
+PIN  14 =  STATE0 
+PIN  15 =  STATE1 
+PIN  13 =  TIOUT 
+%END
+
+%FIELD
+FIELD ADDR = A15,A14,A13,A12,A11,A10,A9,A8,A7,A6,A5,A4,A3,A2,A1,A0
+FIELD MODE = MODE1,MODE0
+FIELD S = S1,S0
+FIELD STATE = STATE1,STATE0
+%END
+
+%EQUATION
+BSRE =>
+    A13 & A14 & A15 & !IOM & !MODE0 & !MODE1 & !STATE0 & STATE1
+  # A15 & !IOM & !MODE1 & STATE0 & !STATE1
+  # A15 & !IOM & !MODE0 & MODE1 & STATE0 & !STATE1
+  # A15 & !IOM & !MODE0 & !MODE1 & !STATE0 & !STATE1
+  # A13 & A14 & A15 & !IOM & MODE0 & !MODE1 & !STATE0 & !STATE1
+  # !A14 & A15 & IOM & !S0 & S1
+  # !A14 & A15 & IOM & S0 & !S1
+  # A14 & IOM & !S0 & S1
+  # A14 & IOM & S0 & !S1
+
+RAM0_CS =>
+    A15 & !IOM & !MODE0 & MODE1 & !STATE0 & STATE1
+  # !A15 & !IOM & !MODE1 & !STATE0 & !STATE1
+  # !A15 & !IOM & !MODE0 & MODE1 & !STATE0 & !STATE1
+
+RAM1_CS =>
+    A15 & !IOM & MODE0 & MODE1 & STATE0 & STATE1
+  # !A13 & A14 & A15 & !IOM & !MODE0 & !MODE1 & !STATE0 & STATE1
+  # A14 & !IOM & MODE0 & !MODE1 & !STATE0 & STATE1
+  # !A14 & A15 & !IOM & MODE0 & !MODE1 & !STATE0
+  # A14 & !A15 & !IOM & !MODE0 & MODE1 & !STATE0 & STATE1
+  # A13 & A14 & !A15 & !IOM & !MODE1 & STATE0 & !STATE1
+  # A13 & !A15 & !IOM & !MODE0 & MODE1 & STATE0 & !STATE1
+  # !A13 & A14 & !A15 & !IOM & !MODE0 & MODE1 & STATE0 & !STATE1
+  # !A13 & A14 & A15 & !IOM & MODE0 & !MODE1 & !STATE0 & !STATE1
+  # A15 & !IOM & !MODE0 & MODE1 & !STATE0 & !STATE1
+
+READY.d  =>
+    ACKN & !BSRE
+
+READY.ar STATE0.ar STATE1.ar  =>
+    0 
+
+READY.sp STATE0.sp STATE1.sp  =>
+    0 
+
+ROM0_CS =>
+    !A15 & !IOM & MODE0 & MODE1 & STATE0 & STATE1
+  # !A15 & !IOM & !MODE0 & !MODE1 & !STATE0 & STATE1
+  # !A14 & !A15 & !IOM & MODE0 & !MODE1 & !STATE0 & STATE1
+  # !A14 & !A15 & !IOM & !MODE0 & MODE1 & !STATE0 & STATE1
+  # !A13 & !A14 & !A15 & !IOM & !MODE0 & STATE0 & !STATE1
+  # !A14 & !A15 & !IOM & MODE0 & !MODE1 & STATE0 & !STATE1
+  # !A13 & A14 & !A15 & !IOM & MODE0 & !MODE1 & STATE0 & !STATE1
+
+ROM1_CS =>
+    !A14 & A15 & !IOM & !MODE0 & !MODE1 & !STATE0 & STATE1
+  # A13 & !A14 & !A15 & !IOM & !MODE0 & !MODE1 & STATE0 & !STATE1
+  # !A13 & A14 & !A15 & !IOM & !MODE0 & !MODE1 & STATE0 & !STATE1
+
+STATE0.d  =>
+    !MODE0 & STATE0 & STATE1
+  # !MODE0 & !STATE0
+  # !MODE1 & !STATE0
+
+STATE0.ar  =>
+    
+STATE0.sp  =>
+    
+STATE1.d  =>
+    !MODE0 & !STATE1
+  # MODE0 & !MODE1 & STATE0 & STATE1
+  # !MODE0 & MODE1 & STATE0 & STATE1
+  # !MODE1 & !STATE1
+
+STATE1.ar  =>
+    
+STATE1.sp  =>
+    
+BSRE.oe  =>
+    1 
+
+MODE1.oe  =>
+    0 
+
+RAM0_CS.oe  =>
+    1 
+
+RAM1_CS.oe  =>
+    1 
+
+READY.oe  =>
+    1 
+
+ROM0_CS.oe  =>
+    1 
+
+ROM1_CS.oe  =>
+    1 
+
+STATE0.oe  =>
+    1 
+
+STATE1.oe  =>
+    1 
+
+%END

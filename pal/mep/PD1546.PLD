@@ -1,0 +1,47 @@
+Name     PD1546 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly MEP 210039/00/01 ;
+Location D7   ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = !BREQ0                  ; /*                                 */ 
+PIN 2   = !BREQ1                  ; /*                                 */
+PIN 3   = !BREQ2                  ; /*                                 */
+PIN 4   = !BREQ3                  ; /*                                 */ 
+PIN 5   = !BREQ4                  ; /*                                 */ 
+PIN 6   = !BREQ5                  ; /*                                 */ 
+PIN 7   = !BREQ6                  ; /*                                 */ 
+PIN 8   = !BREQ7                  ; /*                                 */ 
+PIN 9   = !ADR16                  ; /*                                 */ 
+PIN 10  = !ADR17                  ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+
+PIN 23  = !BPR0                   ; /*                                 */ 
+PIN 22  = !BPR1                   ; /*                                 */ 
+PIN 21  = !BPR2                   ; /*                                 */ 
+PIN 20  = !BPR3                   ; /*                                 */
+PIN 19  = !BPR4                   ; /*                                 */ 
+PIN 18  = !BPR5                   ; /*                                 */ 
+PIN 17  = !BPR6                   ; /*                                 */ 
+PIN 16  = !BPR7                   ; /*                                 */
+PIN 15  = AD17                    ; /*                                 */
+PIN 14  = AD16                    ; /*                                 */
+
+
+BPR0 = BREQ0;
+BPR1 = !BREQ0 & BREQ1;
+BPR2 = !BREQ0 & !BREQ1 & BREQ2;
+BPR3 = !BREQ0 & !BREQ1 & !BREQ2 & BREQ3;
+BPR4 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & BREQ4;
+BPR5 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & !BREQ4 & BREQ5;
+BPR6 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & !BREQ4 & !BREQ5 & BREQ6;
+BPR7 = !BREQ0 & !BREQ1 & !BREQ2 & !BREQ3 & !BREQ4 & !BREQ5 & !BREQ6 & BREQ7;
+
+AD16 = ADR16;
+AD17 = ADR17;

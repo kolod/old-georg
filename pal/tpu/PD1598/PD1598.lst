@@ -1,0 +1,73 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PD1598.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Apr 09 08:17:16 2025
+
+  1:Name     PD1598 ;
+  2:PartNo   GAL22V10D ;
+  3:Date     20.03.2025 ;
+  4:Revision 02 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly TPU 210066/00/02 ;
+  8:Location D24 ;
+  9:Device   g22v10 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN 1   = BCLK                    ; /*                                 */ 
+ 13:PIN 2   = RESET                   ; /*                                 */
+ 14:PIN 3   = BUS_EN                  ; /*                                 */
+ 15:PIN 4   = ALE                     ; /*                                 */ 
+ 16:PIN 5   = BPRN                    ; /*                                 */ 
+ 17:PIN 6   = XACK                    ; /*                                 */ 
+ 18:PIN 7   = X1                      ; /*                                 */ 
+ 19:PIN 8   = X2                      ; /*                                 */ 
+ 20:PIN 9   = X3                      ; /*                                 */ 
+ 21:PIN 10  = X5                      ; /*                                 */ 
+ 22:PIN 11  = X6                      ; /*                                 */ 
+ 23:PIN 13  = OE                      ; /*                                 */ 
+ 24:PIN 14  = X7                      ; /*                                 */ 
+ 25:PIN 23  = X8                      ; /*                                 */ 
+ 26:
+ 27:/* *************** OUTPUT PINS *********************/
+ 28:PIN 14  = NC1                     ; /*                                 */ 
+ 29:PIN 15  = NC2                     ; /*                                 */ 
+ 30:PIN 16  = NC3                     ; /*                                 */ 
+ 31:PIN 17  =                         ; /*                                 */ 
+                                      ^
+[0007ca] invalid syntax:  ;
+ 32:PIN 18  = BUSY1                   ; /*                                 */ 
+                                      ^
+[0012ca] vector size mismatch:  lhs size = 2, rhs size = 1
+ 33:PIN 19  = BUSY2                   ; /*                                 */
+ 34:PIN 20  = CBRQ1                   ; /*                                 */ 
+ 35:PIN 21  = CBRQ2                   ; /*                                 */ 
+ 36:PIN 22  = !BREQ                   ; /*                                 */ 
+ 37:PIN 23  = NC4                     ; /*                                 */
+ 38:
+ 39:
+ 40:SEQUENCE BREQ {
+ 41:
+ 42:  PRESENT 0
+ 43:    IF RESET NEXT 1;
+ 44:    DEFAULT NEXT 0;
+ 45:
+ 46:  PRESENT 1
+ 47:    IF !RESET & BUS_EN & ALE;
+                                ^
+[0009ca] missing symbol:  next 
+
+LISTING FOR LOGIC DESCRIPTION FILE: PD1598.pld                       Page 2
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Apr 09 08:17:16 2025
+
+ 48:    DEFAULT NEXT 1;
+ 49:}
+    
+[0007ca] invalid syntax:  }
+ 50:

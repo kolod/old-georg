@@ -1,0 +1,54 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# 
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Sat Apr 12 12:55:05 2025
+
+LISTING FOR SIMULATION FILE: test.si
+
+   1: Name     test;
+   2: PartNo   GAL22V10D;
+   3: Date     20.03.2025;
+   4: Revision 01;
+   5: Designer Oleksandr Kolodkin;
+   6: Company  ZTR;
+   7: Assembly MPUS 210040/00/01;
+   8: Location D19;
+   9: Device   g22v10;
+  10: 
+  11: 
+  12: ORDER: BSRE, ACKN, READY; 
+  13: 
+  14: 
+
+============
+        R   
+      BAE   
+      SCA   
+      RKD   
+      ENY   
+============
+0001: 11L
+        ^
+[0021sa] invalid test value:  1
+[0019sa] user expected (1) for READY
+
+0002: **L
+      ^^
+[0021sa] invalid test value:  *
+[0021sa] invalid test value:  *
+
+0003: **L
+      ^^
+[0021sa] invalid test value:  *
+[0021sa] invalid test value:  *
+
+0004: **L
+      ^^
+[0021sa] invalid test value:  *
+[0021sa] invalid test value:  *
+
+0005: **L
+      ^^
+[0021sa] invalid test value:  *
+[0021sa] invalid test value:  *
+

@@ -1,0 +1,66 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# 
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Tue Apr 08 15:35:03 2025
+
+LISTING FOR SIMULATION FILE: PD1599.si
+
+   1: Name     PD1599;
+   2: PartNo   GAL22V10D;
+   3: Date     20.03.2025;
+   4: Revision 02;
+   5: Designer Oleksandr Kolodkin;
+   6: Company  ZTR;
+   7: Assembly TPU 210066/00/02;
+   8: Location D25;
+   9: Device   g20v8as;
+  10: 
+  11: 
+  12: ORDER: RESET_FROM_BUTTON, RESET_FROM_PC, INIT, RESET; 
+  13: 
+  14: 
+
+=============
+      R      
+      ER     
+      SE     
+      ES     
+      TE     
+      _T     
+      F_     
+      RF     
+      OR     
+      MO R   
+      _MIE   
+      B_NS   
+      UPIE   
+      TCTT   
+=============
+0001: 00HX
+         ^
+[0019sa] user expected (L) for RESET
+
+0002: 10LX
+         ^
+[0019sa] user expected (H) for RESET
+
+0003: 00HX
+         ^
+[0019sa] user expected (L) for RESET
+
+0004: 01HX
+         ^
+[0019sa] user expected (H) for RESET
+
+0005: 00HX
+         ^
+[0019sa] user expected (L) for RESET
+
+0006: 11LX
+         ^
+[0019sa] user expected (H) for RESET
+
+0007: 00HX
+         ^
+[0019sa] user expected (L) for RESET
+

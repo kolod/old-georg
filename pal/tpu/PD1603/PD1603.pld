@@ -1,0 +1,63 @@
+Name     PD1603 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D14   ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = !WRITE                  ; /*                                 */ 
+PIN 2   = A31                     ; /*                                 */
+PIN 3   = A30                     ; /*                                 */
+PIN 4   = A29                     ; /*                                 */ 
+PIN 5   = A28                     ; /*                                 */ 
+PIN 6   = A23                     ; /*                                 */ 
+PIN 7   = A22                     ; /*                                 */ 
+PIN 8   = A21                     ; /*                                 */ 
+PIN 9   = A20                     ; /*                                 */ 
+PIN 10  = RESET                   ; /*                                 */ 
+PIN 11  = !ALE                    ; /*                                 */ 
+PIN 13  = !READ                   ; /*                                 */ 
+PIN 18  = SIZE                    ; /*                                 */
+
+/* *************** OUTPUT PINS *********************/
+PIN 14  = !MCE1                   ; /*                                 */ 
+PIN 15  = !LED                    ; /*                                 */ 
+PIN 16  = !INPUT                  ; /*                                 */ 
+PIN 17  = !OUTPUT                 ; /*                                 */ 
+PIN 19  = NC                      ; /* not used                        */ 
+PIN 20  = IOM                     ; /*                                 */ 
+PIN 21  = !BUS                    ; /*                                 */ 
+PIN 22  = !MCE0                   ; /*                                 */ 
+PIN 23  = !MCE2                   ; /* not used                        */
+
+/* Setup pin 18 as input only */
+SIZE.OE = 'b'0;
+
+FIELD ADDR = [A31..0];
+
+NC = 'b'0;
+
+$DEFINE _
+
+RW = ALE # READ # WRITE;
+
+APPEND OUTPUT = !RESET & RW     & ADDR:'h'9x0xxxxx;
+APPEND INPUT  = !RESET & RW     & ADDR:'h'9x1xxxxx;
+APPEND LED    = !RESET & RW     & ADDR:'h'9x2xxxxx;
+
+/* 1 MB RAM */
+APPEND MCE1   = !RESET & SIZE:0 & ADDR:'h'8x0xxxxx; /* pin 14 */
+
+/* 4 MB RAM */
+APPEND MCE0   = !RESET & SIZE:1 & ADDR:'b'1000_xxxx_000x_xxxx_xxxx_xxxx_xxxx_xxxx; /* pin 22 */
+APPEND MCE1   = !RESET & SIZE:1 & ADDR:'b'1000_xxxx_001x_xxxx_xxxx_xxxx_xxxx_xxxx; /* pin 14 */
+
+/* Not used */
+APPEND MCE2   = !RESET & RW     & ADDR:'b'0111_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx; /* pin 23 */
+
+APPEND BUS    = !RESET & RW     & ADDR:'b'1110_xxxx_x0xx_xxxx_xxxx_xxxx_xxxx_xxxx;  
+APPEND IOM    = !RESET & RW     & ADDR:'b'1110_xxxx_10xx_xxxx_xxxx_xxxx_xxxx_xxxx;  

@@ -1,0 +1,102 @@
+%SIGNAL
+PIN   9 =  A20 
+PIN   8 =  A21 
+PIN   7 =  A22 
+PIN   6 =  A23 
+PIN   5 =  A28 
+PIN   4 =  A29 
+PIN   3 =  A30 
+PIN   2 =  A31 
+PIN  11 =  ALE 
+PIN  18 =  BUS_OE 
+PIN  20 =  MEM_RF 
+PIN  15 =  P15 
+PIN  16 =  P16 
+PIN  17 =  P17 
+PIN   1 =  PCLK 
+PIN  13 =  READ 
+PIN  10 =  RESET 
+PIN  21 =  T0 
+PIN  22 =  T1 
+PIN  23 =  T2 
+PIN  19 =  WAIT 
+PIN  14 =  WRITE 
+%END
+
+%FIELD
+FIELD TIMER = T2,T1,T0
+%END
+
+%EQUATION
+MEM_RF.oe  =>
+    0 
+
+P15 =>
+    A28 & A29 & A30 & A31 & !ALE & READ & !RESET
+
+P16 =>
+    0 
+
+P17 =>
+    !A20 & A21 & !A22 & !A23 & !A28 & A29 & !A30 & A31 & !ALE & !RESET
+
+T0.d  =>
+    A28 & A29 & A30 & !A31 & !ALE & MEM_RF & !RESET & T0 & T1 & T2
+  # !ALE & !RESET & !T0 & !T1 & !T2
+  # !RESET & T0 & !T1 & T2
+  # !RESET & T1 & !T2
+
+T0.ar T1.ar T2.ar  =>
+    0 
+
+T0.sp T1.sp T2.sp  =>
+    0 
+
+T1.d  =>
+    !ALE & !RESET & !T0 & !T1 & !T2
+  # !RESET & !T0 & T1
+  # !RESET & T0 & !T1 & T2
+
+T1.ar  =>
+    
+T1.sp  =>
+    
+T2.d  =>
+    !ALE & !RESET & !T0 & !T1 & !T2
+  # !RESET & !T0 & !T1 & T2
+  # !RESET & T1 & !T2
+
+T2.ar  =>
+    
+T2.sp  =>
+    
+WAIT =>
+    A28 & A29 & A30 & !A31 & !ALE & !T0 & T2
+  # A28 & A29 & A30 & !A31 & !ALE & T1 & !T2
+  # A28 & A29 & A30 & !A31 & !ALE & T0 & !T1 & T2
+
+WRITE.oe  =>
+    0 
+
+P15.oe  =>
+    1 
+
+P16.oe  =>
+    1 
+
+P17.oe  =>
+    1 
+
+T0.oe  =>
+    1 
+
+T1.oe  =>
+    1 
+
+T2.oe  =>
+    1 
+
+WAIT.oe  =>
+    1 
+
+%END

@@ -1,0 +1,49 @@
+Name     PD1598 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D24 ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = BCLK                    ; /*                                 */ 
+PIN 2   = RESET                   ; /*                                 */
+PIN 3   = BUS_EN                  ; /*                                 */
+PIN 4   = ALE                     ; /*                                 */ 
+PIN 5   = BPRN                    ; /*                                 */ 
+PIN 6   = XACK                    ; /*                                 */ 
+PIN 7   = X1                      ; /*                                 */ 
+PIN 8   = X2                      ; /*                                 */ 
+PIN 9   = X3                      ; /*                                 */ 
+PIN 10  = X5                      ; /*                                 */ 
+PIN 11  = X6                      ; /*                                 */ 
+PIN 13  = OE                      ; /*                                 */ 
+PIN 14  = X7                      ; /*                                 */ 
+PIN 23  = X8                      ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN 14  = NC1                     ; /*                                 */ 
+PIN 15  = NC2                     ; /*                                 */ 
+PIN 16  = NC3                     ; /*                                 */ 
+PIN 17  =                         ; /*                                 */ 
+PIN 18  = BUSY1                   ; /*                                 */ 
+PIN 19  = BUSY2                   ; /*                                 */
+PIN 20  = CBRQ1                   ; /*                                 */ 
+PIN 21  = CBRQ2                   ; /*                                 */ 
+PIN 22  = !BREQ                   ; /*                                 */ 
+PIN 23  = NC4                     ; /*                                 */
+
+
+SEQUENCE BREQ {
+
+  PRESENT 0
+    IF RESET NEXT 1;
+    DEFAULT NEXT 0;
+
+  PRESENT 1
+    IF !RESET & BUS_EN & ALE;
+    DEFAULT NEXT 1;
+}

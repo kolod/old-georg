@@ -1,0 +1,161 @@
+%SIGNAL
+PIN   2 =  A0 
+PIN   3 =  A1 
+PIN   4 =  A2 
+PIN  23 =  A3 
+PIN  14 =  CE 
+PIN   5 =  D0 
+PIN   6 =  D1 
+PIN   7 =  D2 
+PIN   8 =  D3 
+PIN   9 =  D4 
+PIN  10 =  D5 
+PIN  11 =  D6 
+PIN  13 =  D7 
+PIN  15 =  Q0 
+PIN  16 =  Q1 
+PIN  17 =  Q2 
+PIN  18 =  Q3 
+PIN  19 =  Q4 
+PIN  20 =  Q5 
+PIN  21 =  Q6 
+PIN  22 =  Q7 
+PIN   1 =  WRITE 
+%END
+
+%FIELD
+FIELD ADDR = A3,A2,A1,A0
+FIELD INPUT = D7,D6,D5,D4,D3,D2,D1,D0
+FIELD OUTPUT = Q7,Q6,Q5,Q4,Q3,Q2,Q1,Q0
+%END
+
+%EQUATION
+CE.oe  =>
+    0 
+
+Q0.d  =>
+    A0 & A1 & A2 & A3 & !CE & D0
+  # CE & !Q0
+  # !A0 & A1 & A2 & A3 & !Q0
+  # !A3 & !Q0
+  # !A1 & A3 & !Q0
+  # A1 & !A2 & A3 & !Q0
+
+Q0.ar Q1.ar Q2.ar Q3.ar Q4.ar Q5.ar Q6.ar Q7.ar  =>
+    0 
+
+Q0.oe  =>
+    Q0
+
+Q0.sp Q1.sp Q2.sp Q3.sp Q4.sp Q5.sp Q6.sp Q7.sp  =>
+    0 
+
+Q1.d  =>
+    A0 & A1 & A2 & A3 & !CE & D1
+  # CE & !Q1
+  # !A0 & A1 & A2 & A3 & !Q1
+  # !A3 & !Q1
+  # !A1 & A3 & !Q1
+  # A1 & !A2 & A3 & !Q1
+
+Q1.ar  =>
+    
+Q1.oe  =>
+    Q1
+
+Q1.sp  =>
+    
+Q2.d  =>
+    A0 & A1 & A2 & A3 & !CE & D2
+  # CE & !Q2
+  # !A0 & A1 & A2 & A3 & !Q2
+  # !A3 & !Q2
+  # !A1 & A3 & !Q2
+  # A1 & !A2 & A3 & !Q2
+
+Q2.ar  =>
+    
+Q2.oe  =>
+    Q2
+
+Q2.sp  =>
+    
+Q3.d  =>
+    A0 & A1 & A2 & A3 & !CE & D3
+  # CE & !Q3
+  # !A0 & A1 & A2 & A3 & !Q3
+  # !A3 & !Q3
+  # !A1 & A3 & !Q3
+  # A1 & !A2 & A3 & !Q3
+
+Q3.ar  =>
+    
+Q3.oe  =>
+    Q3
+
+Q3.sp  =>
+    
+Q4.d  =>
+    A0 & A1 & A2 & A3 & !CE & D4
+  # CE & !Q4
+  # !A0 & A1 & A2 & A3 & !Q4
+  # !A3 & !Q4
+  # !A1 & A3 & !Q4
+  # A1 & !A2 & A3 & !Q4
+
+Q4.ar  =>
+    
+Q4.oe  =>
+    Q4
+
+Q4.sp  =>
+    
+Q5.d  =>
+    A0 & A1 & A2 & A3 & !CE & D5
+  # CE & !Q5
+  # !A0 & A1 & A2 & A3 & !Q5
+  # !A3 & !Q5
+  # !A1 & A3 & !Q5
+  # A1 & !A2 & A3 & !Q5
+
+Q5.ar  =>
+    
+Q5.oe  =>
+    Q5
+
+Q5.sp  =>
+    
+Q6.d  =>
+    A0 & A1 & A2 & A3 & !CE & D6
+  # CE & !Q6
+  # !A0 & A1 & A2 & A3 & !Q6
+  # !A3 & !Q6
+  # !A1 & A3 & !Q6
+  # A1 & !A2 & A3 & !Q6
+
+Q6.ar  =>
+    
+Q6.oe  =>
+    Q6
+
+Q6.sp  =>
+    
+Q7.d  =>
+    A0 & A1 & A2 & A3 & !CE & D7
+  # CE & !Q7
+  # !A0 & A1 & A2 & A3 & !Q7
+  # !A3 & !Q7
+  # !A1 & A3 & !Q7
+  # A1 & !A2 & A3 & !Q7
+
+Q7.ar  =>
+    
+Q7.oe  =>
+    Q7
+
+Q7.sp  =>
+    
+A3.oe  =>
+    0 
+
+%END

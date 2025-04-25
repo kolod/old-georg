@@ -1,0 +1,61 @@
+Name     PD1579;
+PartNo   GAL22V10D;
+Date     20.03.2025;
+Revision 01;
+Designer Oleksandr Kolodkin;
+Company  ZTR;
+Assembly MPUS 210040/00/01;
+Location D19;
+Device   g22v10;
+
+
+ORDER: CLK, !ACKN, A13, A14, A15, MODE0, MODE1, S0, S1, IOM, MWAIT0, MWAIT1, STATE0, STATE1, !READY, !BSRE, !ROM0_CS, !ROM1_CS, !RAM0_CS, !RAM1_CS; 
+
+
+VECTORS:
+/* READY */
+CXXXX11XXXXXLL******  /* Switch to state 0 */
+C1XX011XX011LL*HLHHH  /* ROM0              */
+C1X011110111LL*LHHHH  /* BSRE I/O          */
+C1X011110111LLLLHHHH  /* BSRE I/O          */
+C0XXX1110111LLHLHHHH  /*                   */
+/* State 0 */
+CXXXX11XXXXXLL******  /* Switch to state 0 */
+CXXX011XX0XXLL*HLHHH  /* ROM0              */
+CXXX111XX0XXLL*HHHHL  /* RAM1              */
+CXX0111101XXLL*LHHHH  /* BSRE I/O          */
+CXX0111011XXLL*LHHHH  /* BSRE I/O          */
+CXX1111101XXLL*LHHHH  /* BSRE I/O          */
+CXX1111011XXLL*LHHHH  /* BSRE I/O          */
+CXX1X11101XXLL*LHHHH  /* BSRE I/O          */
+CXX1X11011XXLL*LHHHH  /* BSRE I/O          */
+CXX0011XX1XXLL*HHHHH  /* None              */
+CXX0011XX1XXLL*HHHHH  /* None              */
+/* State 1 */
+CXXXX11XXXXXLL******  /* Switch to state 0 */
+CXXXX00XXXXXHL******  /* Switch to state 1 */
+CXXXX00XXXXXHL******
+CXXXXX0XXXXXHL******
+CXXXX0XXXXXXHL******
+/* State 2 */
+CXXXX11XXXXXLL******  /* Switch to state 0 */
+CXXXX10XXXXXLH******  /* Switch to state 1 */
+CXXXX00XXXXXLH******
+CXXXXX0XXXXXLH******
+CXXXX0XXXXXXLH******
+/* State 3 */
+CXXXX11XXXXXLL******  /* Switch to state 0 */
+CXXXX01XXXXXHH******  /* Switch to state 3 */
+CXXXX00XXXXXHH******
+CXXXXX0XXXXXHH******
+CXXXX0XXXXXXHH******
+CXXX001XX0XXHH*HHHLH  /* RAM0              */
+CXXX101XX0XXHH*HHHHL  /* RAM1              */
+CXX0101101XXHH*LHHHH  /* BSRE I/O          */
+CXX0101011XXHH*LHHHH  /* BSRE I/O          */
+CXX1101101XXHH*LHHHH  /* BSRE I/O          */
+CZX1101011XXHH*LHHHH  /* BSRE I/O          */
+CXX1001101XXHH*LHHHH  /* BSRE I/O          */
+CXX1001011XXHH*LHHHH  /* BSRE I/O          */
+CXX0001XX1XXHH*HHHHH  /* None              */
+CXX0001XX1XXHH*HHHHH  /* None              */

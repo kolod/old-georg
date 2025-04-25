@@ -1,0 +1,84 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PD1599.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Fri Apr 18 11:39:44 2025
+
+  1:Name     PD1599 ;
+  2:PartNo   GAL20V8B ;
+  3:Date     20.03.2025 ;
+  4:Revision 02 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly TPU 210066/00/02 ;
+  8:Location D25   ;
+  9:Device   g20v8ms ; 
+ 10:Format   j ;
+ 11:
+ 12:/* g20v8ms - registered   */
+ 13:/* g20v8ma - complex      */
+ 14:/* g20v8as - simple       */
+ 15:
+ 16:/* *************** INPUT PINS *********************/
+ 17:PIN 1   = CLK                     ; /*                                 */ 
+ 18:PIN 2   = !BUS_OE                 ; /* from PD1604 pin 18              */
+ 19:PIN 3   = BUS_EN                  ; /* from PD1603 pin 21              */
+ 20:PIN 4   = IOM                     ; /*                                 */ 
+ 21:PIN 5   = !WRITE                  ; /*                                 */ 
+ 22:PIN 6   = !READ                   ; /*                                 */ 
+ 23:PIN 7   = RESET_FROM_PC           ; /*                                 */ 
+ 24:PIN 8   = RESET_FROM_BUTTON       ; /*                                 */ 
+ 25:PIN 9   = BOOT_FROM_ROM           ; /*                                 */ 
+ 26:PIN 10  = X5                      ; /*                                 */ 
+ 27:PIN 13  = OE                      ; /*                                 */ 
+ 28:
+ 29:/* *************** OUTPUT PINS *********************/
+ 30:PIN 15  = !MRDC                   ; /*                                 */ 
+ 31:PIN 16  = !MWTC                   ; /*                                 */ 
+ 32:PIN 17  = !IORC                   ; /*                                 */ 
+ 33:PIN 18  = !IOWC                   ; /*                                 */ 
+ 34:PIN 19  = RESET                   ; /*                                 */ 
+ 35:PIN 20  = BUS_DIR                 ; /*                                 */ 
+ 36:PIN 21  = INIT                    ; /*                                 */ 
+ 37:
+ 38:/* ************** NOT CONNECTED ********************/
+ 39:PIN 11  = NC1                     ; /* I10                             */ 
+ 40:PIN 14  = NC2                     ; /* I12                             */ 
+ 41:PIN 22  = NC3                     ; /* I/07                            */ 
+ 42:PIN 23  = NC4                     ; /* I13                             */ 
+ 43:
+ 44:NC3    = 'b'0;
+ 45:NC3.OE = 'b'0;
+ 46:
+ 47:RESET.D   = RESET_FROM_PC # RESET_FROM_BUTTON;
+ 48:INIT.D    = !RESET_FROM_BUTTON & !RESET_FROM_PC;
+ 49:
+ 50:/* 1 */
+ 51:MRDC.D    = BUS_EN & !IOM & READ;  
+ 52:MWTC.D    = BUS_OE & !IOM & WRITE; 
+ 53:IORC.D    = BUS_EN & IOM & READ;   
+
+LISTING FOR LOGIC DESCRIPTION FILE: PD1599.pld                       Page 2
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Fri Apr 18 11:39:44 2025
+
+ 54:IOWC.D    = BUS_OE & IOM & WRITE;  
+ 55:BUS_DIR.D = BUS_OE & READ;         
+ 56:
+ 57:/* 2
+ 58:MRDC.D    = (BUS_OE # BUS_EN) & !IOM & READ;  
+ 59:MWTC.D    = (BUS_OE # BUS_EN) & !IOM & WRITE; 
+ 60:IORC.D    = (BUS_OE # BUS_EN) & IOM & READ;   
+ 61:IOWC.D    = (BUS_OE # BUS_EN) & IOM & WRITE;  
+ 62:BUS_DIR.D = (BUS_OE # BUS_EN) & !READ;         
+ 63:*/
+ 64:
+
+
+
+Jedec Fuse Checksum       (31f3)
+Jedec Transmit Checksum   (eff0)

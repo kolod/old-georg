@@ -1,0 +1,148 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PD1579.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Tue Apr 15 07:56:50 2025
+
+  1:Name     PD1579 ;
+  2:PartNo   GAL22V10D ;
+  3:Date     20.03.2025 ;
+  4:Revision 01 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly MPUS 210040/00/01 ;
+  8:Location D19 ;
+  9:Device   g22v10 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN 1   = CLK                     ; /* CPU Clock                       */ 
+ 13:PIN 3   = !ACKN                   ; /*                                 */ 
+ 14:PIN 4   = A13                     ; /*                                 */ 
+ 15:PIN 5   = A14                     ; /*                                 */ 
+ 16:PIN 6   = A15                     ; /*                                 */ 
+ 17:PIN 7   = MODE0                   ; /*                                 */ 
+ 18:PIN 23  = MODE1                   ; /*                                 */ 
+ 19:PIN 8   = S0                      ; /*                                 */ 
+ 20:PIN 9   = S1                      ; /*                                 */ 
+ 21:PIN 10  = IOM                     ; /*                                 */ 
+ 22:PIN 11  = MWAIT0                  ; /*                                 */ 
+ 23:PIN 16  = MWAIT1                  ; /*                                 */ 
+ 24:PIN 13  = TIOUT                   ; /*                                 */
+ 25:
+ 26:/* *************** OUTPUT PINS *********************/
+ 27:PIN 21  = !ROM0_CS                ; /* ROM D21                         */ 
+ 28:PIN 20  = !ROM1_CS                ; /* ROM D24 (not soldered)          */ 
+ 29:PIN 22  = !RAM0_CS                ; /* RAM D26                         */ 
+ 30:PIN 18  = !RAM1_CS                ; /* RAM D29                         */ 
+ 31:PIN 17  = !BSRE                   ; /* Multibus                        */ 
+ 32:PIN 19  = !READY                  ; /*                                 */ 
+ 33:PIN 14  = STATE0                  ; /* Internal state                  */ 
+ 34:PIN 15  = STATE1                  ; /* Internal state                  */ 
+ 35:
+ 36:FIELD ADDR  = [A15..0];
+ 37:FIELD MODE  = [MODE1..0];
+ 38:FIELD STATE = [STATE1..0];
+ 39:FIELD S     = [S1..0];
+ 40:
+ 41:/* CPU State */
+ 42:$DEFINE HALT 0 /* Processor halted         */
+ 43:$DEFINE WRITE 1 /* Write data to memory     */
+ 44:$DEFINE READ 2 /* Read data from memory    */
+ 45:$DEFINE FETCH 3 /* Fetch opcode from memory */
+ 46:
+ 47:STATE0.ar = 'b'0;
+ 48:STATE0.sp = 'b'0;
+ 49:STATE1.ar = 'b'0;
+ 50:STATE1.sp = 'b'0;
+ 51:
+ 52:SEQUENCE STATE {
+ 53:  PRESENT 0
+
+LISTING FOR LOGIC DESCRIPTION FILE: PD1579.pld                       Page 2
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Tue Apr 15 07:56:50 2025
+
+ 54:    IF !MODE0 & !MODE1 NEXT 1;
+ 55:    IF  MODE0 & !MODE1 NEXT 2;
+ 56:    IF !MODE0 &  MODE1 NEXT 3;
+ 57:    DEFAULT NEXT 0;
+ 58:
+ 59:  PRESENT 1
+ 60:    IF MODE0 & MODE1 NEXT 0;
+ 61:    DEFAULT NEXT 1;
+ 62:
+ 63:  PRESENT 2
+ 64:    IF MODE0 & MODE1 NEXT 0;
+ 65:    DEFAULT NEXT 2;
+ 66:
+ 67:  PRESENT 3
+ 68:    IF MODE0 & MODE1 NEXT 0;
+ 69:    DEFAULT NEXT 3;
+ 70:}
+ 71:
+ 72:READY.ar = 'b'0;
+ 73:READY.sp = 'b'0;
+ 74:SEQUENCE READY {
+ 75:  PRESENT 0
+ 76:    IF BSRE & !ACKN NEXT 1;
+ 77:    DEFAULT NEXT 0;
+ 78:
+ 79:  PRESENT 1
+ 80:    IF !BSRE NEXT 0;
+ 81:    IF ACKN NEXT 0;
+ 82:    DEFAULT NEXT 1;
+ 83:}
+ 84:
+ 85:CONDITION {
+ 86:  IF (IOM:0 & STATE:0 & MODE:3 & ADDR:[0000..7FFF]) OUT ROM0_CS;
+ 87:  IF (IOM:0 & STATE:0 & MODE:3 & ADDR:[8000..FFFF]) OUT RAM1_CS;
+ 88:
+ 89:  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[0000..7FFF]) OUT ROM0_CS; 
+ 90:  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[8000..BFFF]) OUT ROM1_CS;
+ 91:  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[C000..DFFF]) OUT RAM1_CS; 
+ 92:  IF (IOM:0 & STATE:1 & MODE:0 & ADDR:[E000..FFFF]) OUT BSRE; 
+ 93:  IF (IOM:0 & STATE:1 & MODE:1 & ADDR:[0000..3FFF]) OUT ROM0_CS; 
+ 94:  IF (IOM:0 & STATE:1 & MODE:1 & ADDR:[4000..FFFF]) OUT RAM1_CS; 
+ 95:  IF (IOM:0 & STATE:1 & MODE:2 & ADDR:[0000..3FFF]) OUT ROM0_CS;
+ 96:  IF (IOM:0 & STATE:1 & MODE:2 & ADDR:[4000..7FFF]) OUT RAM1_CS; 
+ 97:  IF (IOM:0 & STATE:1 & MODE:2 & ADDR:[8000..FFFF]) OUT RAM0_CS;  
+ 98:
+ 99:  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[0000..1FFF]) OUT ROM0_CS;
+100:  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[2000..5FFF]) OUT ROM1_CS;
+101:  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[6000..7FFF]) OUT RAM1_CS;
+102:  IF (IOM:0 & STATE:2 & MODE:0 & ADDR:[8000..FFFF]) OUT BSRE; 
+103:  IF (IOM:0 & STATE:2 & MODE:1 & ADDR:[0000..5FFF]) OUT ROM0_CS;
+104:  IF (IOM:0 & STATE:2 & MODE:1 & ADDR:[6000..7FFF]) OUT RAM1_CS;
+105:  IF (IOM:0 & STATE:2 & MODE:1 & ADDR:[8000..FFFF]) OUT BSRE; 
+106:  IF (IOM:0 & STATE:2 & MODE:2 & ADDR:[0000..1FFF]) OUT ROM0_CS;
+107:  IF (IOM:0 & STATE:2 & MODE:2 & ADDR:[2000..7FFF]) OUT RAM1_CS;
+
+LISTING FOR LOGIC DESCRIPTION FILE: PD1579.pld                       Page 3
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Tue Apr 15 07:56:50 2025
+
+108:  IF (IOM:0 & STATE:2 & MODE:2 & ADDR:[8000..FFFF]) OUT BSRE; 
+109:
+110:  IF (IOM:0 & STATE:3 & MODE:0 & ADDR:[0000..7FFF]) OUT RAM0_CS;
+111:  IF (IOM:0 & STATE:3 & MODE:0 & ADDR:[8000..FFFF]) OUT BSRE;
+112:  IF (IOM:0 & STATE:3 & MODE:1 & ADDR:[0000..7FFF]) OUT RAM0_CS;
+113:  IF (IOM:0 & STATE:3 & MODE:1 & ADDR:[8000..DFFF]) OUT RAM1_CS;
+114:  IF (IOM:0 & STATE:3 & MODE:1 & ADDR:[E000..FFFF]) OUT BSRE;
+115:  IF (IOM:0 & STATE:3 & MODE:2 & ADDR:[0000..7FFF]) OUT RAM0_CS;
+116:  IF (IOM:0 & STATE:3 & MODE:2 & ADDR:[8000..FFFF]) OUT RAM1_CS;
+117:  IF (IOM:1 & S:[2, 1]  & ADDR:[4000..FFFF]) OUT BSRE;
+118:}
+119:
+120:
+
+
+
+Jedec Fuse Checksum       (f06f)
+Jedec Transmit Checksum   (b566)

@@ -1,0 +1,87 @@
+Name     PD1604 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D14   ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = PCLK                    ; /*                                 */ 
+PIN 2   = A31                     ; /*                                 */
+PIN 3   = A30                     ; /*                                 */
+PIN 4   = A29                     ; /*                                 */ 
+PIN 5   = A28                     ; /*                                 */ 
+PIN 6   = A23                     ; /*                                 */ 
+PIN 7   = A22                     ; /*                                 */ 
+PIN 8   = A21                     ; /*                                 */ 
+PIN 9   = A20                     ; /*                                 */ 
+PIN 10  = RESET                   ; /*                                 */ 
+PIN 11  = ALE                     ; /*                                 */ 
+PIN 13  = READ                    ; /*                                 */
+PIN 14  = WRITE                   ; /*                                 */ 
+PIN 20  = MEM_RF                  ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+
+PIN 15  = P15                     ; /*                                 */ 
+PIN 16  = P16                     ; /*                                 */ 
+PIN 17  = WATCHDOG                ; /*                                 */ 
+PIN 18  = BUS_OE                  ; /*                                 */
+PIN 19  = WAIT                    ; /*                                 */ 
+
+PIN 21  = T0                      ; /*                                 */ 
+PIN 22  = T1                      ; /*                                 */ 
+PIN 23  = T2                      ; /*                                 */
+
+FIELD TIMER = [T2..0];
+
+SEQUENCE TIMER {
+  PRESENT 0
+    IF !RESET & !A31 & A30 & A29 & A28 & !ALE & MEM_RF NEXT 1;
+    DEFAULT NEXT 0;
+
+  PRESENT 1
+    IF RESET NEXT 0;
+    DEFAULT NEXT 2;
+
+  PRESENT 2
+    IF RESET NEXT 0;
+    DEFAULT NEXT 3;
+
+  PRESENT 3
+    IF RESET NEXT 0;
+    DEFAULT NEXT 4;
+
+  PRESENT 4
+    IF RESET NEXT 0;
+    DEFAULT NEXT 5;
+
+  PRESENT 5
+    IF RESET NEXT 0;
+    DEFAULT NEXT 7;
+
+  PRESENT 7
+    IF RESET # ALE NEXT 0;
+    DEFAULT NEXT 7;
+}
+
+TIMER.AR = 'b'0;
+TIMER.SP = 'b'0;
+
+WRITE.OE  = 'b'0;
+MEM_RF.OE = 'b'0;
+
+
+P15 = !RESET & A31 & A30 & A29 & A28 & !ALE & READ;
+P16 = 'b'0;
+P17 = !RESET & A31 & !A30 & A29 & !A28 & !A23 & !A22 & A21 & !A20 & !ALE;
+
+BUS_OE = 'b'1;
+WAIT = !RESET & MEM_RF & !ALE & !A31 & A30 & A29 & A28 & TIMER:[1..5];
+
+
+
+    

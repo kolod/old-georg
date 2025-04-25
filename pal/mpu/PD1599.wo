@@ -1,0 +1,36 @@
+#WAVEFORM
+#H Name     PD1599;
+#H PartNo   GAL22V10D;
+#H Date     20.03.2025;
+#H Revision 02;
+#H Designer Oleksandr Kolodkin;
+#H Company  ZTR;
+#H Assembly TPU 210066/00/02;
+#H Location D25;
+#H Device   g20v8as;
+#H 
+#H 
+#H ORDER: RESET_FROM_BUTTON, RESET_FROM_PC, INIT, RESET; 
+#H 
+#H 
+#V 0001 00HX
+#E 0019 L RESET
+
+#V 0002 10LX
+#E 0019 H RESET
+
+#V 0003 00HX
+#E 0019 L RESET
+
+#V 0004 01HX
+#E 0019 H RESET
+
+#V 0005 00HX
+#E 0019 L RESET
+
+#V 0006 11LX
+#E 0019 H RESET
+
+#V 0007 00HX
+#E 0019 L RESET
+

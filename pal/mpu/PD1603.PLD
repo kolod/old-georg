@@ -1,0 +1,77 @@
+Name     PD1603 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D14   ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = WRITE                   ; /*                                 */ 
+PIN 2   = A31                     ; /*                                 */
+PIN 3   = A30                     ; /*                                 */
+PIN 4   = A29                     ; /*                                 */ 
+PIN 5   = A28                     ; /*                                 */ 
+PIN 6   = A23                     ; /*                                 */ 
+PIN 7   = A22                     ; /*                                 */ 
+PIN 8   = A21                     ; /*                                 */ 
+PIN 9   = A20                     ; /*                                 */ 
+PIN 10  = RESET                   ; /*                                 */ 
+PIN 11  = ALE                     ; /*                                 */ 
+PIN 13  = READ                    ; /*                                 */ 
+PIN 18  = RAM_SIZE                ; /*                                 */
+
+/* *************** OUTPUT PINS *********************/
+PIN 14  = !MCE1                   ; /*                                 */ 
+PIN 15  = !LED                    ; /*                                 */ 
+PIN 16  = !INPUT                  ; /*                                 */ 
+PIN 17  = !OUTPUT                 ; /*                                 */ 
+PIN 19  = NC                      ; /* not used                        */ 
+PIN 20  = IOM                     ; /*                                 */ 
+PIN 21  = BUS                     ; /*                                 */ 
+PIN 22  = !MCE0                   ; /*                                 */ 
+PIN 23  = !MCE2                   ; /* not used                        */
+
+/* Setup pin 18 as input only */
+RAM_SIZE.OE = 'b'0;
+
+NC = 'b'0;
+
+OUTPUT = 
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & !A21 & !A20 & !ALE #
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & !A21 & !A20 & !READ #
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & !A21 & !A20 & !WRITE;
+
+INPUT =
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & !A21 & A20 & !ALE #
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & !A21 & A20 & !READ #
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & !A21 & A20 & !WRITE;
+
+LED = 
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & A21 & !A20 & !ALE #
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & A21 & !A20 & !READ #
+    !RESET & A31 & !A30 & !A29 & A28 & !A23 & !A22 & A21 & !A20 & !WRITE;
+
+MCE2 = 
+    !RESET & !A31 & A30 & A29 & A28 & !ALE #
+    !RESET & !A31 & A30 & A29 & A28 & !READ #
+    !RESET & !A31 & A30 & A29 & A28 & !WRITE;
+
+MCE1 = 
+    !RESET & A31 & !A30 & !A29 & !A28 & !A23 & !A22 & !A21 & !A20 & !RAM_SIZE #
+    !RESET & A31 & !A30 & !A29 & !A28 & !A23 & !A22 & A21 & RAM_SIZE;
+
+MCE0 = 
+    !RESET & A31 & !A30 & !A29 & !A28 & !A23 & !A22 & !A21 & RAM_SIZE;
+
+BUS = 
+    !RESET & A31 & A30 & A29 & !A28 & !A22 & !ALE #
+    !RESET & A31 & A30 & A29 & !A28 & !A22 & !READ #
+    !RESET & A31 & A30 & A29 & !A28 & !A22 & !WRITE;
+
+IOM = 
+    !RESET & A31 & A30 & A29 & !A28 & A23 & !A22 & !ALE #
+    !RESET & A31 & A30 & A29 & !A28 & A23 & !A22 & !READ #
+    !RESET & A31 & A30 & A29 & !A28 & A23 & !A22 & !WRITE;

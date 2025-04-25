@@ -1,0 +1,88 @@
+%SIGNAL
+PIN  14 =  AD16 
+PIN  15 =  AD17 
+PIN   9 = !ADR16 
+PIN  10 = !ADR17 
+PIN  23 = !BPR0 
+PIN  22 = !BPR1 
+PIN  21 = !BPR2 
+PIN  20 = !BPR3 
+PIN  19 = !BPR4 
+PIN  18 = !BPR5 
+PIN  17 = !BPR6 
+PIN  16 = !BPR7 
+PIN   1 = !BREQ0 
+PIN   2 = !BREQ1 
+PIN   3 = !BREQ2 
+PIN   4 = !BREQ3 
+PIN   5 = !BREQ4 
+PIN   6 = !BREQ5 
+PIN   7 = !BREQ6 
+PIN   8 = !BREQ7 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+AD16 =>
+    !ADR16
+
+AD17 =>
+    !ADR17
+
+BPR0 =>
+    !BREQ0
+
+BPR1 =>
+    BREQ0 & !BREQ1
+
+BPR2 =>
+    BREQ0 & BREQ1 & !BREQ2
+
+BPR3 =>
+    BREQ0 & BREQ1 & BREQ2 & !BREQ3
+
+BPR4 =>
+    BREQ0 & BREQ1 & BREQ2 & BREQ3 & !BREQ4
+
+BPR5 =>
+    BREQ0 & BREQ1 & BREQ2 & BREQ3 & BREQ4 & !BREQ5
+
+BPR6 =>
+    BREQ0 & BREQ1 & BREQ2 & BREQ3 & BREQ4 & BREQ5 & !BREQ6
+
+BPR7 =>
+    BREQ0 & BREQ1 & BREQ2 & BREQ3 & BREQ4 & BREQ5 & BREQ6 & !BREQ7
+
+AD16.oe  =>
+    1 
+
+AD17.oe  =>
+    1 
+
+BPR0.oe  =>
+    1 
+
+BPR1.oe  =>
+    1 
+
+BPR2.oe  =>
+    1 
+
+BPR3.oe  =>
+    1 
+
+BPR4.oe  =>
+    1 
+
+BPR5.oe  =>
+    1 
+
+BPR6.oe  =>
+    1 
+
+BPR7.oe  =>
+    1 
+
+%END

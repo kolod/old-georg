@@ -1,0 +1,29 @@
+Name     PD1599;
+PartNo   GAL20V8B;
+Date     20.03.2025;
+Revision 02;
+Designer Oleksandr Kolodkin;
+Company  ZTR;
+Assembly TPU 210066/00/02;
+Location D25;
+Device   g20v8ms;
+
+
+ORDER: CLK, RESET_FROM_PC, RESET_FROM_BUTTON, RESET, INIT; 
+
+
+VECTORS:
+000LH
+100LH
+010HH
+110HH
+000LH
+100LH
+001HL
+101HL
+000LH
+100LH
+011HL
+111HL
+000LH
+100LH

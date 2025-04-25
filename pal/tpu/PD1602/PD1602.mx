@@ -1,0 +1,189 @@
+Name     PD1602 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D32   ;
+Device   g22v10 ;
+Format   j ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = CLK                     ; /* Write                           */ 
+PIN 2   = A0                      ; /* Address 0                       */
+PIN 3   = A1                      ; /* Address 1                       */
+PIN 4   = A2                      ; /* Address 2                       */ 
+PIN 23  = A3                      ; /* Address 3                       */ 
+PIN 5   = I0                      ; /* Input 0                         */ 
+PIN 6   = I1                      ; /* Input 1                         */ 
+PIN 7   = I2                      ; /* Input 2                         */ 
+PIN 8   = I3                      ; /* Input 3                         */ 
+PIN 9   = I4                      ; /* Input 4                         */ 
+PIN 10  = I5                      ; /* Input 5                         */
+PIN 11  = I6                      ; /* Input 6                         */
+PIN 13  = I7                      ; /* Input 7                         */ 
+PIN 14  = !CE                     ; /* Chip Enable                     */ 
+
+/* *************** OUTPUT PINS *********************/
+
+PIN 22  = !D0                     ; /* Output 0                        */ 
+PIN 21  = !D1                     ; /* Output 1                        */ 
+PIN 20  = !D2                     ; /* Output 2                        */ 
+PIN 19  = !D3                     ; /* Output 3                        */
+PIN 18  = !D4                     ; /* Output 4                        */ 
+PIN 17  = !D5                     ; /* Output 5                        */ 
+PIN 16  = !D6                     ; /* Output 6                        */ 
+PIN 15  = !D7                     ; /* Output 7                        */
+
+A3.OE = 'b'0;
+CE.OE = 'b'0;
+
+FIELD ADDR   = [A3..0];
+FIELD INPUT  = [I7..0];
+FIELD OUTPUT = [D7..0];
+
+
+  D0.OE = 'b'1;
+  D0.SP = 'b'0;
+  D0.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D0.D = CE & ADDR:0 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D0.D = CE & ADDR:[8..F] & I0;
+
+  /* Store bits if addres not match */
+  APPEND D0.D = CE & !(ADDR:0 # ADDR:[8..F]) & D0;
+
+  /* Store bits if no Chip Enable */
+  APPEND D0.D = !CE & D0;                              
+
+
+  D1.OE = 'b'1;
+  D1.SP = 'b'0;
+  D1.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D1.D = CE & ADDR:1 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D1.D = CE & ADDR:[8..F] & I1;
+
+  /* Store bits if addres not match */
+  APPEND D1.D = CE & !(ADDR:1 # ADDR:[8..F]) & D1;
+
+  /* Store bits if no Chip Enable */
+  APPEND D1.D = !CE & D1;                              
+
+
+  D2.OE = 'b'1;
+  D2.SP = 'b'0;
+  D2.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D2.D = CE & ADDR:2 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D2.D = CE & ADDR:[8..F] & I2;
+
+  /* Store bits if addres not match */
+  APPEND D2.D = CE & !(ADDR:2 # ADDR:[8..F]) & D2;
+
+  /* Store bits if no Chip Enable */
+  APPEND D2.D = !CE & D2;                              
+
+
+  D3.OE = 'b'1;
+  D3.SP = 'b'0;
+  D3.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D3.D = CE & ADDR:3 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D3.D = CE & ADDR:[8..F] & I3;
+
+  /* Store bits if addres not match */
+  APPEND D3.D = CE & !(ADDR:3 # ADDR:[8..F]) & D3;
+
+  /* Store bits if no Chip Enable */
+  APPEND D3.D = !CE & D3;                              
+
+
+  D4.OE = 'b'1;
+  D4.SP = 'b'0;
+  D4.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D4.D = CE & ADDR:4 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D4.D = CE & ADDR:[8..F] & I4;
+
+  /* Store bits if addres not match */
+  APPEND D4.D = CE & !(ADDR:4 # ADDR:[8..F]) & D4;
+
+  /* Store bits if no Chip Enable */
+  APPEND D4.D = !CE & D4;                              
+
+
+  D5.OE = 'b'1;
+  D5.SP = 'b'0;
+  D5.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D5.D = CE & ADDR:5 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D5.D = CE & ADDR:[8..F] & I5;
+
+  /* Store bits if addres not match */
+  APPEND D5.D = CE & !(ADDR:5 # ADDR:[8..F]) & D5;
+
+  /* Store bits if no Chip Enable */
+  APPEND D5.D = !CE & D5;                              
+
+
+  D6.OE = 'b'1;
+  D6.SP = 'b'0;
+  D6.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D6.D = CE & ADDR:6 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D6.D = CE & ADDR:[8..F] & I6;
+
+  /* Store bits if addres not match */
+  APPEND D6.D = CE & !(ADDR:6 # ADDR:[8..F]) & D6;
+
+  /* Store bits if no Chip Enable */
+  APPEND D6.D = !CE & D6;                              
+
+
+  D7.OE = 'b'1;
+  D7.SP = 'b'0;
+  D7.AR = 'b'0;
+
+  /* Set single bit */
+  APPEND D7.D = CE & ADDR:7 & I0;
+
+  /* Set all bits */
+  /* D5 has unexpected behavior !!! */
+  APPEND D7.D = CE & ADDR:[8..F] & I7;
+
+  /* Store bits if addres not match */
+  APPEND D7.D = CE & !(ADDR:7 # ADDR:[8..F]) & D7;
+
+  /* Store bits if no Chip Enable */
+  APPEND D7.D = !CE & D7;                              
+

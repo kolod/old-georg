@@ -1,0 +1,208 @@
+
+*******************************************************************************
+                                    PD1599
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# MW-10400000
+Device          g20v8ms  Library DLIB-h-40-3
+Created         Fri Apr 18 13:52:39 2025
+Name            PD1599 
+Partno          GAL20V8B 
+Revision        02 
+Date            20.03.2025 
+Designer        Oleksandr Kolodkin 
+Company         ZTR 
+Assembly        TPU 210066/00/02 
+Location        D25   
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+BUS_DIR.d  =>
+    BUS_OE & WRITE
+
+DELAY.d  =>
+    WRITE
+
+DELAY.oe  =>
+    0 
+
+INIT.d  =>
+    !RESET_FROM_BUTTON
+
+IORC.d  =>
+    BUS_EN & IOM & READ
+
+IOWC.d  =>
+    BUS_OE & IOM & WRITE
+
+MRDC.d  =>
+    BUS_EN & !IOM & READ
+
+MWTC.d  =>
+    BUS_OE & !IOM & WRITE
+
+NC3 =>
+    0 
+
+NC3 =>
+    0 
+
+RESET.d  =>
+    RESET_FROM_PC
+  # RESET_FROM_BUTTON
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    BOOT_FROM_ROM               9        V        -       -       -     
+    BUS_DIR                     20       V        -       -       -     
+    BUS_DIR             d       20       X        1       8       1     
+    BUS_EN                      3        V        -       -       -     
+ !  BUS_OE                      2        V        -       -       -     
+    CLK                         1        V        -       -       -     
+    DELAY                       22       V        -       -       -     
+    DELAY               d       22       X        1       8       1     
+    DELAY               oe      22       X        1       1       1     
+    INIT                        21       V        -       -       -     
+    INIT                d       21       X        1       8       1     
+    IOM                         4        V        -       -       -     
+    IORC                        17       V        -       -       -     
+    IORC                d       17       X        1       8       1     
+    IOWC                        18       V        -       -       -     
+    IOWC                d       18       X        1       8       1     
+    MRDC                        15       V        -       -       -     
+    MRDC                d       15       X        1       8       1     
+    MWTC                        16       V        -       -       -     
+    MWTC                d       16       X        1       8       1     
+    NC1                         11       V        -       -       -     
+    NC2                         14       V        -       -       -     
+    NC3                         0        I        1       -       -     
+    NC3                 oe      0        I        1       -       -     
+    NC4                         23       V        -       -       -     
+ !  READ                        6        V        -       -       -     
+    RESET                       19       V        -       -       -     
+    RESET               d       19       X        2       8       1     
+    RESET_FROM_BUTTON           8        V        -       -       -     
+    RESET_FROM_PC               7        V        -       -       -     
+ !  WRITE                       5        V        -       -       -     
+    X5                          10       V        -       -       -     
+    oe                          13       V        -       -       -     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+
+
+===============================================================================
+                                   Fuse Plot
+===============================================================================
+
+Syn   02704 x Ac0   02705 - 
+
+Pin #22  02560  Pol -  02632  Ac1 x 
+ 00000 -------------x-------------------------- 
+ 00040 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00080 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00120 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00200 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00240 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00280 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #21  02561  Pol -  02633  Ac1 x 
+ 00320 -------------------------x-------------- 
+ 00360 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00400 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00440 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00520 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00560 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00600 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #20  02562  Pol -  02634  Ac1 x 
+ 00640 -x-----------x-------------------------- 
+ 00680 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00720 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00760 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00800 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00840 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00880 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00920 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #19  02563  Pol -  02635  Ac1 x 
+ 00960 --------------------x------------------- 
+ 01000 ------------------------x--------------- 
+ 01040 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01080 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01120 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01200 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01240 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #18  02564  Pol -  02636  Ac1 x 
+ 01280 -x------x----x-------------------------- 
+ 01320 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01360 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01400 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01440 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01520 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01560 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #17  02565  Pol -  02637  Ac1 x 
+ 01600 ----x---x--------x---------------------- 
+ 01640 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01680 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01720 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01760 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01800 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01840 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01880 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #16  02566  Pol -  02638  Ac1 x 
+ 01920 -x-------x---x-------------------------- 
+ 01960 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02000 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02040 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02080 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02120 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02200 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #15  02567  Pol -  02639  Ac1 x 
+ 02240 ----x----x-------x---------------------- 
+ 02280 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02320 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02360 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02400 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02440 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02520 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+
+
+LEGEND    X : fuse not blown 
+          - : fuse blown 
+
+===============================================================================
+                                 Chip Diagram
+===============================================================================
+
+                               ______________
+                              |    PD1599    |
+                      CLK x---|1           24|---x Vcc                      
+                  !BUS_OE x---|2           23|---x NC4                      
+                   BUS_EN x---|3           22|---x DELAY                    
+                      IOM x---|4           21|---x INIT                     
+                   !WRITE x---|5           20|---x BUS_DIR                  
+                    !READ x---|6           19|---x RESET                    
+            RESET_FROM_PC x---|7           18|---x IOWC                     
+        RESET_FROM_BUTTON x---|8           17|---x IORC                     
+            BOOT_FROM_ROM x---|9           16|---x MWTC                     
+                       X5 x---|10          15|---x MRDC                     
+                      NC1 x---|11          14|---x NC2                      
+                      GND x---|12          13|---x oe                       
+                              |______________|
+

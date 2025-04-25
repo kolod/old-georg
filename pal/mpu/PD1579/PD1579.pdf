@@ -1,0 +1,213 @@
+{COMPONENT F:\PAL\MPU\PD1579.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Mon Mar 24 09:01:52 2025 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P CLK {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P ACKN {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P A13 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P A14 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P A15 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P MODE0 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P S0 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P S1 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P IOM {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P MWAIT0 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P MWAIT1 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P MODE1 {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P BSRE' {Pt "I/O"}{Lq 0}{Ploc 330 20}}
+   {P RAM1_CS' {Pt "I/O"}{Lq 0}{Ploc 330 40}}
+   {P ROM1_CS' {Pt "I/O"}{Lq 0}{Ploc 330 60}}
+   {P ROM0_CS' {Pt "I/O"}{Lq 0}{Ploc 330 80}}
+   {P RAM0_CS' {Pt "I/O"}{Lq 0}{Ploc 330 100}}
+   {P STATE0 {Pt "OUTPUT"}{Lq 0}{Ploc 330 120}}
+   {P STATE1 {Pt "OUTPUT"}{Lq 0}{Ploc 330 140}}
+   {P READY' {Pt "OUTPUT"}{Lq 0}{Ploc 330 160}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 215 290}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 270}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 230}
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 310 30}
+   {Pnl 310 50}
+   {Pnl 310 70}
+   {Pnl 310 90}
+   {Pnl 310 110}
+   {Pnl 310 130}
+   {Pnl 310 150}
+   {Pnl 310 170}
+
+   {Sd A 1 3 4 5 6 7 8 9 10 11 16 23 17 18 20 21 22 14 15 19}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 280 300 0}
+   {L 130 260 100 260}
+   {L 130 270 140 260 130 250}
+   {L 130 220 100 220}
+   {L 130 200 100 200}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {C 305 20 5}
+   {L 310 20 330 20}
+   {C 305 40 5}
+   {L 310 40 330 40}
+   {C 305 60 5}
+   {L 310 60 330 60}
+   {C 305 80 5}
+   {L 310 80 330 80}
+   {C 305 100 5}
+   {L 310 100 330 100}
+   {L 300 120 330 120}
+   {L 300 140 330 140}
+   {C 305 160 5}
+   {L 310 160 330 160}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "CLK" 140 260}
+   {T "ACKN" 140 220}
+   {T "A13" 140 200}
+   {T "A14" 140 180}
+   {T "A15" 140 160}
+   {T "MODE0" 140 140}
+   {T "S0" 140 120}
+   {T "S1" 140 100}
+   {T "IOM" 140 80}
+   {T "MWAIT0" 140 60}
+   {T "MWAIT1" 140 40}
+   {T "MODE1" 140 20}
+   [Tj "RC"]
+   {T "BSRE'" 290 20}
+   {T "RAM1_CS'" 290 40}
+   {T "ROM1_CS'" 290 60}
+   {T "ROM0_CS'" 290 80}
+   {T "RAM0_CS'" 290 100}
+   {T "STATE0" 290 120}
+   {T "STATE1" 290 140}
+   {T "READY'" 290 160}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G22V10" 215 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD F:\PAL\MPU\PD1579 215 280}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N CLK
+   }
+   {N ACKN
+   }
+   {N A13
+   }
+   {N A14
+   }
+   {N A15
+   }
+   {N MODE0
+   }
+   {N S0
+   }
+   {N S1
+   }
+   {N IOM
+   }
+   {N MWAIT0
+   }
+   {N MWAIT1
+   }
+   {N MODE1
+   }
+   {N BSRE'
+   }
+   {N RAM1_CS'
+   }
+   {N ROM1_CS'
+   }
+   {N ROM0_CS'
+   }
+   {N RAM0_CS'
+   }
+   {N STATE0
+   }
+   {N STATE1
+   }
+   {N READY'
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

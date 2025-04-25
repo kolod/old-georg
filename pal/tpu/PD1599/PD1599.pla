@@ -1,0 +1,37 @@
+# Berkeley PLA format generated using
+#
+# CUPL(WM)        5.0a Serial# MW-10400000
+# Device          g20v8ms  Library DLIB-h-40-3
+# Created         Fri Apr 18 11:39:45 2025
+# Name            PD1599 
+# Partno          GAL20V8B 
+# Revision        02 
+# Date            20.03.2025 
+# Designer        Oleksandr Kolodkin 
+# Company         ZTR 
+# Assembly        TPU 210066/00/02 
+# Location        D25   
+#
+# Inputs  0 BOOT_FROM_ROM BUS_DIR BUS_EN 
+#         !BUS_OE CLK INIT IOM 
+#         !IORC !IOWC !MRDC !MWTC 
+#         NC1 NC2 NC3 NC4 
+#         !READ RESET RESET_FROM_BUTTON RESET_FROM_PC 
+#         !WRITE X5 oe 
+# Outputs BUS_DIR.d INIT.d !IORC.d !IOWC.d 
+#         !MRDC.d !MWTC.d NC3 NC3.oe 
+#         RESET.d 
+.i 23
+.o 9
+.p 10
+----1-----------1------ 1~~~~~~~~
+------------------00--- ~1~~~~~~~
+---1---1--------1------ ~~1~~~~~~
+----1--1------------1-- ~~~1~~~~~
+---1---0--------1------ ~~~~1~~~~
+----1--0------------1-- ~~~~~1~~~
+1---------------------- ~~~~~~1~~
+1---------------------- ~~~~~~~1~
+-------------------1--- ~~~~~~~~1
+------------------1---- ~~~~~~~~1
+.end

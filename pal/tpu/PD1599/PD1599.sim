@@ -1,0 +1,58 @@
+%SIGNAL
+PIN   9 =  BOOT_FROM_ROM 
+PIN  20 =  BUS_DIR 
+PIN   3 =  BUS_EN 
+PIN   2 = !BUS_OE 
+PIN   1 =  CLK 
+PIN  21 =  INIT 
+PIN   4 =  IOM 
+PIN  17 = !IORC 
+PIN  18 = !IOWC 
+PIN  15 = !MRDC 
+PIN  16 = !MWTC 
+PIN  11 =  NC1 
+PIN  14 =  NC2 
+PIN  22 =  NC3 
+PIN  23 =  NC4 
+PIN   6 = !READ 
+PIN  19 =  RESET 
+PIN   8 =  RESET_FROM_BUTTON 
+PIN   7 =  RESET_FROM_PC 
+PIN   5 = !WRITE 
+PIN  10 =  X5 
+PIN  13 =  oe 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+BUS_DIR.d  =>
+    !BUS_OE & !READ
+
+INIT.d  =>
+    !RESET_FROM_BUTTON & !RESET_FROM_PC
+
+IORC.d  =>
+    BUS_EN & IOM & !READ
+
+IOWC.d  =>
+    !BUS_OE & IOM & !WRITE
+
+MRDC.d  =>
+    BUS_EN & !IOM & !READ
+
+MWTC.d  =>
+    !BUS_OE & !IOM & !WRITE
+
+NC3 =>
+    0 
+
+NC3.oe  =>
+    0 
+
+RESET.d  =>
+    RESET_FROM_PC
+  # RESET_FROM_BUTTON
+
+%END

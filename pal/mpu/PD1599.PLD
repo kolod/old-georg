@@ -1,0 +1,47 @@
+Name     PD1599 ;
+PartNo   GAL22V10D ;
+Date     20.03.2025 ;
+Revision 02 ;
+Designer Oleksandr Kolodkin ;
+Company  ZTR ;
+Assembly TPU 210066/00/02 ;
+Location D25   ;
+Device   g20v8ms ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = CLK                     ; /*                                 */ 
+PIN 2   = BUS_OE                  ; /*                                 */
+PIN 3   = BUS_EN                  ; /*                                 */
+PIN 4   = !IOM                    ; /*                                 */ 
+PIN 5   = !WRITE                  ; /*                                 */ 
+PIN 6   = !READ                   ; /*                                 */ 
+PIN 7   = RESET_FROM_PC           ; /*                                 */ 
+PIN 8   = RESET_FROM_BUTTON       ; /*                                 */ 
+PIN 9   = BOOT_FROM_ROM           ; /*                                 */ 
+PIN 10  = X5                      ; /*                                 */ 
+PIN 11  = X6                      ; /*                                 */ 
+PIN 13  = !OE                     ; /*                                 */ 
+PIN 14  = X7                      ; /*                                 */ 
+PIN 23  = X8                      ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN 15  = MRDC                    ; /*                                 */ 
+PIN 16  = MWRC                    ; /*                                 */ 
+PIN 17  = IORC                    ; /*                                 */ 
+PIN 18  = IOWC                    ; /*                                 */ 
+PIN 19  = RESET                   ; /*                                 */ 
+PIN 20  = BUS_DIR                 ; /*                                 */ 
+PIN 21  = INIT                    ; /*                                 */ 
+PIN 22  = NC                      ; /*                                 */ 
+
+RESET.D = RESET_FROM_PC # RESET_FROM_BUTTON;
+INIT  = !RESET_FROM_BUTTON;
+
+MRDC = BUS_EN & IOM & READ;
+MWRC = BUS_EN & IOM & WRITE;
+IORC = BUS_EN & !IOM & READ;
+IOWC = BUS_EN & !IOM & WRITE;
+BUS_DIR = READ;
+Y1 = 'b'0;
+
+

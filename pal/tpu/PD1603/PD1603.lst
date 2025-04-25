@@ -1,0 +1,84 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PD1603.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Apr 09 08:16:47 2025
+
+  1:Name     PD1603 ;
+  2:PartNo   GAL22V10D ;
+  3:Date     20.03.2025 ;
+  4:Revision 02 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly TPU 210066/00/02 ;
+  8:Location D14   ;
+  9:Device   g22v10 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN 1   = !WRITE                  ; /*                                 */ 
+ 13:PIN 2   = A31                     ; /*                                 */
+ 14:PIN 3   = A30                     ; /*                                 */
+ 15:PIN 4   = A29                     ; /*                                 */ 
+ 16:PIN 5   = A28                     ; /*                                 */ 
+ 17:PIN 6   = A23                     ; /*                                 */ 
+ 18:PIN 7   = A22                     ; /*                                 */ 
+ 19:PIN 8   = A21                     ; /*                                 */ 
+ 20:PIN 9   = A20                     ; /*                                 */ 
+ 21:PIN 10  = RESET                   ; /*                                 */ 
+ 22:PIN 11  = !ALE                    ; /*                                 */ 
+ 23:PIN 13  = !READ                   ; /*                                 */ 
+ 24:PIN 18  = SIZE                    ; /*                                 */
+ 25:
+ 26:/* *************** OUTPUT PINS *********************/
+ 27:PIN 14  = !MCE1                   ; /*                                 */ 
+ 28:PIN 15  = !LED                    ; /*                                 */ 
+ 29:PIN 16  = !INPUT                  ; /*                                 */ 
+ 30:PIN 17  = !OUTPUT                 ; /*                                 */ 
+ 31:PIN 19  = NC                      ; /* not used                        */ 
+ 32:PIN 20  = IOM                     ; /*                                 */ 
+ 33:PIN 21  = BUS                     ; /*                                 */ 
+ 34:PIN 22  = !MCE0                   ; /*                                 */ 
+ 35:PIN 23  = !MCE2                   ; /* not used                        */
+ 36:
+ 37:/* Setup pin 18 as input only */
+ 38:SIZE.OE = 'b'0;
+ 39:
+ 40:FIELD ADDR = [A31..0];
+ 41:
+ 42:NC = 'b'0;
+ 43:
+ 44:$DEFINE _ 
+ 45:RW = ALE # READ # WRITE;
+ 46:
+ 47:APPEND OUTPUT = !RESET & RW     & ADDR:'h'9x0xxxxx;
+ 48:APPEND INPUT  = !RESET & RW     & ADDR:'h'9x1xxxxx;
+ 49:APPEND LED    = !RESET & RW     & ADDR:'h'9x2xxxxx;
+ 50:
+ 51:/* 1 MB RAM */
+ 52:APPEND MCE1   = !RESET & SIZE:0 & ADDR:'h'8x0xxxxx; /* pin 14 */
+ 53:
+
+LISTING FOR LOGIC DESCRIPTION FILE: PD1603.pld                       Page 2
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Apr 09 08:16:47 2025
+
+ 54:/* 4 MB RAM */
+ 55:APPEND MCE0   = !RESET & SIZE:1 & ADDR:'b'1000xxxx000xxxxxxxxxxxxxxxxxxxxx; /* pin 22 */
+ 56:APPEND MCE1   = !RESET & SIZE:1 & ADDR:'b'1000xxxx001xxxxxxxxxxxxxxxxxxxxx; /* pin 14 */
+ 57:
+ 58:/* Not used */
+ 59:APPEND MCE2   = !RESET & RW     & ADDR:'b'0111xxxxxxxxxxxxxxxxxxxxxxxxxxxx; /* pin 23 */
+ 60:
+ 61:APPEND BUS    = !RESET & RW     & ADDR:'b'1110xxxxx0xxxxxxxxxxxxxxxxxxxxxx;  
+ 62:APPEND IOM    = !RESET & RW     & ADDR:'b'1110xxxx10xxxxxxxxxxxxxxxxxxxxxx;  
+ 63:
+ 64:
+
+
+
+Jedec Fuse Checksum       (9f4e)
+Jedec Transmit Checksum   (fa5f)

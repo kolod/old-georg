@@ -1,0 +1,223 @@
+{COMPONENT F:\PAL\MPU\PD1599.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Tue Apr 08 15:34:55 2025 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P OE' {Pt "INPUT"}{Lq 0}{Ploc 100 340}}
+   {P CLK {Pt "INPUT"}{Lq 0}{Ploc 100 320}}
+   {P BUS_OE {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
+   {P BUS_EN {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P IOM' {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P WRITE' {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P READ' {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P RESET_F {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P RESET_FR {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P BOOT_FRO {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P X5 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P X6 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P X7 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P RESET {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P NC {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P X8 {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P MRDC {Pt "I/O"}{Lq 0}{Ploc 350 20}}
+   {P MWRC {Pt "I/O"}{Lq 0}{Ploc 350 40}}
+   {P IORC {Pt "I/O"}{Lq 0}{Ploc 350 60}}
+   {P IOWC {Pt "I/O"}{Lq 0}{Ploc 350 80}}
+   {P BUS_DIR {Pt "I/O"}{Lq 0}{Ploc 350 100}}
+   {P INIT {Pt "I/O"}{Lq 0}{Ploc 350 120}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 225 370}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 350}
+   {Pnl 120 330}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 290}
+   {Pnl 120 270}
+   {Pnl 120 250}
+   {Pnl 120 230}
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 330 30}
+   {Pnl 330 50}
+   {Pnl 330 70}
+   {Pnl 330 90}
+   {Pnl 330 110}
+   {Pnl 330 130}
+
+   {Sd A 13 1 2 3 4 5 6 7 8 9 10 11 14 19 22 23 15 16 17 18 20 21}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 360 320 0}
+   {L 120 340 100 340}
+   {C 125 340 5}
+   {L 130 320 100 320}
+   {L 130 330 140 320 130 310}
+   {L 130 280 100 280}
+   {L 130 260 100 260}
+   {L 120 240 100 240}
+   {C 125 240 5}
+   {L 120 220 100 220}
+   {C 125 220 5}
+   {L 120 200 100 200}
+   {C 125 200 5}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 320 20 350 20}
+   {L 320 40 350 40}
+   {L 320 60 350 60}
+   {L 320 80 350 80}
+   {L 320 100 350 100}
+   {L 320 120 350 120}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "OE'" 140 340}
+   {T "CLK" 140 320}
+   {T "BUS_OE" 140 280}
+   {T "BUS_EN" 140 260}
+   {T "IOM'" 140 240}
+   {T "WRITE'" 140 220}
+   {T "READ'" 140 200}
+   {T "RESET_F" 140 180}
+   {T "RESET_FR" 140 160}
+   {T "BOOT_FRO" 140 140}
+   {T "X5" 140 120}
+   {T "X6" 140 100}
+   {T "X7" 140 80}
+   {T "RESET" 140 60}
+   {T "NC" 140 40}
+   {T "X8" 140 20}
+   [Tj "RC"]
+   {T "MRDC" 310 20}
+   {T "MWRC" 310 40}
+   {T "IORC" 310 60}
+   {T "IOWC" 310 80}
+   {T "BUS_DIR" 310 100}
+   {T "INIT" 310 120}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G20V8MS" 225 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD F:\PAL\MPU\PD1599 225 360}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N OE'
+   }
+   {N CLK
+   }
+   {N BUS_OE
+   }
+   {N BUS_EN
+   }
+   {N IOM'
+   }
+   {N WRITE'
+   }
+   {N READ'
+   }
+   {N RESET_F
+   }
+   {N RESET_FR
+   }
+   {N BOOT_FRO
+   }
+   {N X5
+   }
+   {N X6
+   }
+   {N X7
+   }
+   {N RESET
+   }
+   {N NC
+   }
+   {N X8
+   }
+   {N MRDC
+   }
+   {N MWRC
+   }
+   {N IORC
+   }
+   {N IOWC
+   }
+   {N BUS_DIR
+   }
+   {N INIT
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

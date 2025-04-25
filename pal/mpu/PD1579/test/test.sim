@@ -1,0 +1,27 @@
+%SIGNAL
+PIN   3 =  ACKN 
+PIN   2 =  BSRE 
+PIN   1 =  CLK 
+PIN  15 =  READY 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+READY.d  =>
+    BSRE & READY
+  # ACKN & BSRE & !READY
+  # !ACKN & READY
+  # BSRE & !READY
+
+READY.ar  =>
+    0 
+
+READY.sp  =>
+    0 
+
+READY.oe  =>
+    1 
+
+%END

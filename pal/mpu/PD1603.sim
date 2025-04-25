@@ -1,0 +1,100 @@
+%SIGNAL
+PIN   9 =  A20 
+PIN   8 =  A21 
+PIN   7 =  A22 
+PIN   6 =  A23 
+PIN   5 =  A28 
+PIN   4 =  A29 
+PIN   3 =  A30 
+PIN   2 =  A31 
+PIN  11 =  ALE 
+PIN  21 =  BUS 
+PIN  16 = !INPUT 
+PIN  20 =  IOM 
+PIN  15 = !LED 
+PIN  22 = !MCE0 
+PIN  14 = !MCE1 
+PIN  23 = !MCE2 
+PIN  19 =  NC 
+PIN  17 = !OUTPUT 
+PIN  18 =  RAM_SIZE 
+PIN  13 =  READ 
+PIN  10 =  RESET 
+PIN   1 =  WRITE 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+BUS =>
+    !A22 & !A28 & A29 & A30 & A31 & !ALE & !RESET
+  # !A22 & !A28 & A29 & A30 & A31 & !READ & !RESET
+  # !A22 & !A28 & A29 & A30 & A31 & !RESET & !WRITE
+
+INPUT =>
+    A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !ALE & !RESET
+  # A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !READ & !RESET
+  # A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !RESET & !WRITE
+
+IOM =>
+    !A22 & A23 & !A28 & A29 & A30 & A31 & !ALE & !RESET
+  # !A22 & A23 & !A28 & A29 & A30 & A31 & !READ & !RESET
+  # !A22 & A23 & !A28 & A29 & A30 & A31 & !RESET & !WRITE
+
+LED =>
+    !A20 & A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !ALE & !RESET
+  # !A20 & A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !READ & !RESET
+  # !A20 & A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !RESET & !WRITE
+
+MCE0 =>
+    !A21 & !A22 & !A23 & !A28 & !A29 & !A30 & A31 & RAM_SIZE & !RESET
+
+MCE1 =>
+    !A20 & !A21 & !A22 & !A23 & !A28 & !A29 & !A30 & A31 & !RAM_SIZE & !RESET
+  # A21 & !A22 & !A23 & !A28 & !A29 & !A30 & A31 & RAM_SIZE & !RESET
+
+MCE2 =>
+    A28 & A29 & A30 & !A31 & !ALE & !RESET
+  # A28 & A29 & A30 & !A31 & !READ & !RESET
+  # A28 & A29 & A30 & !A31 & !RESET & !WRITE
+
+NC =>
+    0 
+
+OUTPUT =>
+    !A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !ALE & !RESET
+  # !A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !READ & !RESET
+  # !A20 & !A21 & !A22 & !A23 & A28 & !A29 & !A30 & A31 & !RESET & !WRITE
+
+RAM_SIZE.oe  =>
+    0 
+
+BUS.oe  =>
+    1 
+
+INPUT.oe  =>
+    1 
+
+IOM.oe  =>
+    1 
+
+LED.oe  =>
+    1 
+
+MCE0.oe  =>
+    1 
+
+MCE1.oe  =>
+    1 
+
+MCE2.oe  =>
+    1 
+
+NC.oe  =>
+    1 
+
+OUTPUT.oe  =>
+    1 
+
+%END

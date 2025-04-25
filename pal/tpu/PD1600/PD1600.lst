@@ -1,0 +1,57 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PD1600.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Wed Apr 09 08:16:58 2025
+
+  1:Name     PD1600 ;
+  2:PartNo   GAL22V10D ;
+  3:Date     20.03.2025 ;
+  4:Revision 02 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly MEP 210039/00/01 ;
+  8:Location D31 ;
+  9:Device   g22v10 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN 1   = !RD                     ; /* Read                            */ 
+ 13:PIN 2   = I0                      ; /* Input 0                         */
+ 14:PIN 3   = I1                      ; /* Input 1                         */
+ 15:PIN 4   = I2                      ; /* Input 2                         */ 
+ 16:PIN 5   = I3                      ; /* Input 3                         */ 
+ 17:PIN 6   = I4                      ; /* Input 4                         */ 
+ 18:PIN 7   = I5                      ; /* Input 5                         */ 
+ 19:PIN 8   = I6                      ; /* Input 6                         */ 
+ 20:PIN 9   = I7                      ; /* Input 7                         */ 
+ 21:PIN 10  = I8                      ; /* Input 8                         */
+ 22:PIN 11  = I9                      ; /* Input 9                         */
+ 23:PIN 13  = !CE                     ; /* Chip Enable                     */ 
+ 24:
+ 25:/* *************** OUTPUT PINS *********************/
+ 26:
+ 27:PIN 23  = D0                      ; /* Output 0                        */ 
+ 28:PIN 22  = D1                      ; /* Output 1                        */ 
+ 29:PIN 21  = D2                      ; /* Output 2                        */ 
+ 30:PIN 20  = D3                      ; /* Output 3                        */
+ 31:PIN 19  = D4                      ; /* Output 4                        */ 
+ 32:PIN 18  = D5                      ; /* Output 5                        */ 
+ 33:PIN 17  = D6                      ; /* Output 6                        */ 
+ 34:PIN 16  = D7                      ; /* Output 7                        */
+ 35:PIN 15  = D8                      ; /* Output 8                        */
+ 36:PIN 14  = D9                      ; /* Output 9                        */
+ 37:
+ 38:FIELD INPUT  = [I9..0];
+ 39:FIELD OUTPUT = [D9..0];
+ 40:
+ 41:OUTPUT.OE = CE;
+ 42:OUTPUT.D  = INPUT & CE;
+ 43:OUTPUT.SP = 'b'0;
+ 44:OUTPUT.AR = 'b'0;
+ 45:
+
+
+
+Jedec Fuse Checksum       (6c80)
+Jedec Transmit Checksum   (9cbe)

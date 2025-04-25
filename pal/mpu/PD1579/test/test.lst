@@ -1,0 +1,47 @@
+LISTING FOR LOGIC DESCRIPTION FILE: test.pld                         Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# MW-10400000
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Sat Apr 12 12:54:55 2025
+
+  1:Name     test ;
+  2:PartNo   GAL22V10D ;
+  3:Date     20.03.2025 ;
+  4:Revision 01 ;
+  5:Designer Oleksandr Kolodkin ;
+  6:Company  ZTR ;
+  7:Assembly MPUS 210040/00/01 ;
+  8:Location D19 ;
+  9:Device   g22v10 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN 1   = CLK                     ; /*                                 */
+ 13:PIN 2   = BSRE                    ; /*                                 */ 
+ 14:PIN 3   = ACKN                    ; /*                                 */ 
+ 15:
+ 16:/* *************** OUTPUT PINS *********************/
+ 17:PIN 15  = READY                   ; /*                                 */ 
+ 18:
+ 19:READY.ar = 'b'0;
+ 20:READY.sp = 'b'0;
+ 21:APPEND READY.D = BSRE & !READY;
+ 22:APPEND READY.D = ACKN & BSRE & READY;
+ 23:
+ 24:SEQUENCE READY {
+ 25:  PRESENT 1
+ 26:    IF BSRE:0 NEXT 0;
+ 27:    DEFAULT NEXT 1;
+ 28:
+ 29:  PRESENT 0
+ 30:    IF BSRE:1 NEXT 1;
+ 31:    IF ACKN:0 NEXT 1;
+ 32:    DEFAULT NEXT 0;
+ 33:}
+ 34:
+ 35:
+
+
+
+Jedec Fuse Checksum       (1ed9)
+Jedec Transmit Checksum   (a58a)
