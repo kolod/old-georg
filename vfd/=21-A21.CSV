@@ -1,0 +1,114 @@
+Source file: =21-A21.dnl
+Date: 29.04.2025
+Time: 08:34
+User name: MASTERDRIVES MC Plus
+Device type: MASTERDRIVES MC Plus
+SW version: 01.6
+Bus address: 0
+;;;;
+MFLB: 6SE70 .. [16] 22-6TP50                        
+Converter supply voltage: 540 V
+Converter current(n): 25.5 A
+Converter power(n): 11.0 kW
+Date of generation: 26.4.2005
+Operating hours: 2112.13.969
+Serial number (FID): 0x600  / 0x4124
+Personal identification number (PIN): 0xFFFF / 0xFFFF
+
+;Basic board;Slot A;Slot B;Slot C
+Software version;1.6;0.0;0.0;0.0
+Software ID;0.5;0.0;0.0;0.0
+Board code;94;0;111;115
+Board ID;255;0;255;254
+
+Faults;actual;last;before-last
+Fault memory;0;17;2
+Fault value;0;0;1
+
+P No.;Par.- text;Ind.;Index text;Par. value
+;;;;
+P053;Parameter Access;000;;0000000000011111 
+P060;Menu Select;000;;[7] Upr/fr. Access 
+P070;Order No. 6SE70.;000;;[16] 22-6TP50 
+P071;Line Volts;000;;540 V
+P072;Rtd Drive Amps;000;;25.5 A
+P073;Rtd Drive Power;000;;11.0 kW
+P095;Select Mot Type;000;;[2] 1PH7 / 1PL6 
+P097;Select 1PH7;000;;[8] 1PH7131-2_F 
+P101;Mot Rtd Volts;000;;398 V
+P102;Motor Rtd Amps;000;;23.80 A
+P103;Mot No Load Amps;000;;8.14 A
+P104;MotPwrFactor;000;;0.883 
+P107;Mot Rtd Freq;000;;59.7 Hz
+P108;Mot Rtd Speed;000;;1750 min¯¹
+P113;Mot Rtd Torque;000;;70.90 Nm
+P121;Stator Resist;000;;159 mOhm
+P122;Tot Leak React;000;;1428 mOhm
+P123;Stator React;000;;26.80 Ohm
+P124;Rotor TimeConst;000;;447 ms
+P128;Max Current;000;;48.0 A
+P130;Select MotEncod;000;;[1] SBR Res. 2-pole 
+P150;SBP Config;002;Technol. encode;0x133 
+P151;Pulse #;002;Technol. encode;5000 
+P169;extEnAVWF(befDP);000;Technol. encode;5 
+P170;extEnAVWF(aftDP);000;Technol. encode;86171969 
+P221;Smooth n(set);001;FDS 1;0.5 ms
+P223;Smooth n(act);000;FDS 1;1.0 ms
+P231;n(act)_filter;001;Filt mot encod;300 
+P235;n-Reg Gain1;001;FDS 1;11.0 
+P236;n-RegGain2;001;FDS 1;30.0 
+P238;n-Reg Character;000;FDS 1;1 
+P239;Smoothing I Comp;001;FDS 1;12.0 ms
+P240;n-Reg Time;001;FDS 1;20 ms
+P263;FSetpTorq(Lim1);001;FDS 1;200.0 %
+P264;FSetpTorq(Lim2);001;FDS 1;-200.0 %
+P267;Src Torque(add3);001;BiCoDS 1;K402  FIXSETP K U002 
+P293;FieldWKFreq;000;BiCoDS 1;47.0 Hz
+P294;Select Flux Reg;000;BiCoDS 1;[1] OL controlled 
+P340;Pulse Frequency;000;BiCoDS 1;5.1 kHz
+P350;Ref Amps;000;BiCoDS 1;24.0 A
+P351;Ref Volts;000;BiCoDS 1;398 V
+P352;Ref Frequency;000;BiCoDS 1;51 Hz
+P353;Ref Speed;001;left of comma;907 min¯¹
+P354;Ref Torque;000;left of comma;70.0 Nm
+P367;Select Reg Type;000;left of comma;[3] Speed Control 
+P443;Src MainSetpoint;001;BiCoDS 1;K11  AnaIn Setp 
+P452;n(max,FWDSpeed);001;FDS 1;150.0 %
+P453;n(max,REVSpeed);001;FDS 1;-150.0 %
+P462;Accel. Time;001;FDS 1;0.00 s
+P464;Decel. Time;001;FDS 1;0.00 s
+P554;Src ON/OFF1;001;BiCoDS 1;B20  DigIn 6 
+P556;Src2 OFF2(coast);001;BiCoDS 1;B16  DigIn 4 
+P565;Src1 Fault Reset;001;BiCoDS 1;B0  FixBinector 0 
+P602;Excitation Time;000;BiCoDS 1;1.03 s
+P603;De-MagnetizeTime;000;BiCoDS 1;1.03 s
+P610;Src BrakeThresh1;000;BiCoDS 1;K184  Isq(act) 
+P630;AnaIn Scale;000;BiCoDS 1;1.11 
+P631;AnaIn Offset;000;BiCoDS 1;-0.05 %
+P640;Src AnaOut;001;BiCoDS 1;K153  M(set, n-Reg) 
+P643;CU AnalogOutGain;001;FDS 1;5.0 V
+P653;Src DigOut3;001;BiCoDS 1;B106  Fault 
+P701;SCom Baud;001;Ser.Interface1;[8] 38400 Baud 
+P772;SrcEnRGenByp;000;Ser.Interface1;B0  FixBinector 0 
+P792;Perm Deviation;001;FDS 1;10.0 %
+P843;DSP RAM Value;000;FDS 1;768 
+P897;Menu Select;000;FDS 1;[7] Upr/fr. Access 
+P927;Parameter Access;000;FDS 1;0000000000011111 
+P952;# of Faults;000;FDS 1;7 
+U002;FixSetp 18;001;FDS 1;2.00 %
+U617;Check Table;001;Check Tab 1;1 
+U617;Check Table;002;Check Tab 2;1 
+U617;Check Table;003;Check Tab 3;10 
+U617;Check Table;004;Check Tab 4;10 
+U617;Check Table;005;Check Tab 5;10 
+U617;Check Table;006;Check Tab 6;10 
+U617;Check Table;007;Check Tab 7;10 
+U617;Check Table;008;Check Tab 8;10 
+U620;Table Width;003;Table 3;0 
+U620;Table Width;004;Table 4;0 
+U620;Table Width;005;Table 5;0 
+U620;Table Width;006;Table 6;0 
+U620;Table Width;007;Table 7;0 
+U620;Table Width;008;Table 8;0 
+U976;FID;001;Table 8;0x600 
+U976;FID;002;Table 8;0x4124 

@@ -1,0 +1,201 @@
+Source file: =11-A11.dnl
+Date: 29.04.2025
+Time: 08:27
+User name: MASTERDRIVES VC Plus
+Device type: MASTERDRIVES VC Plus
+SW version: 03.4
+Bus address: 0
+;;;;
+MFLB: 6SE70 .. [18] 23-4TP60                        
+Converter supply voltage: 540 V
+Converter current(n): 34.0 A
+Converter power(n): 15.0 kW
+Date of generation: 20.1.2005
+Operating hours: 1033.12.1949
+
+;Basic board;Slot A;Slot B
+Software version;3.4;0.0;0.0
+Software ID;0.1;0.0;0.0
+Board code;95;0;0
+Board ID;196;0;0
+
+Faults;actual;last;before-last
+Fault memory;0;8;23
+Fault value;0;333;2
+
+P No.;Par.- text;Ind.;Index text;Par. value
+;;;;
+P028;S.DispPowerConn;001;;K22  Output Amps 
+P030;S.Disp Binec;001;;B121  CompV not OK 
+P053;Parameter Access;000;;0000000001111111 
+P060;Menu Select;000;;[7] Upr/fr. Access 
+P070;Order No. 6SE70.;000;;[18] 23-4TP60 
+P071;Line Volts;000;;540 V
+P072;Rtd Drive Amps;000;;34.0 A
+P073;Rtd Drive Power;000;;15.0 kW
+P100;Control Mode;001;MDS1;[3] f Regulat 
+P101;Mot Rtd Volts;001;MDS1;380 V
+P102;Motor Rtd Amps;001;MDS1;31.0 A
+P102;Motor Rtd Amps;002;MDS2;34.0 A
+P102;Motor Rtd Amps;003;MDS3;34.0 A
+P102;Motor Rtd Amps;004;MDS4;34.0 A
+P104;MotPwrFactor;001;MDS1;0.830 
+P104;MotPwrFactor;002;MDS2;0.870 
+P104;MotPwrFactor;003;MDS3;0.870 
+P104;MotPwrFactor;004;MDS4;0.870 
+P105;Motor Rtd Power;001;MDS1;20.0 hp
+P105;Motor Rtd Power;002;MDS2;20.0 hp
+P105;Motor Rtd Power;003;MDS3;20.0 hp
+P105;Motor Rtd Power;004;MDS4;20.0 hp
+P108;Motor Rtd Speed;001;MDS1;970.0 min¯¹
+P109;Motor #PolePairs;001;MDS1;3 
+P113;Mot Rtd Torque;001;MDS1;130.00 Nm
+P113;Mot Rtd Torque;002;MDS2;102.00 Nm
+P113;Mot Rtd Torque;003;MDS3;102.00 Nm
+P113;Mot Rtd Torque;004;MDS4;102.00 Nm
+P120;Main Reactance;001;MDS1;212.1 %
+P120;Main Reactance;002;MDS2;244.9 %
+P120;Main Reactance;003;MDS3;244.9 %
+P120;Main Reactance;004;MDS4;244.9 %
+P121;Stator Resist;001;MDS1;4.01 %
+P121;Stator Resist;002;MDS2;5.33 %
+P121;Stator Resist;003;MDS3;5.33 %
+P121;Stator Resist;004;MDS4;5.33 %
+P122;Tot Leak React;001;MDS1;18.23 %
+P122;Tot Leak React;002;MDS2;15.69 %
+P122;Tot Leak React;003;MDS3;15.69 %
+P122;Tot Leak React;004;MDS4;15.69 %
+P128;Imax;001;MDS1;46.1 A
+P128;Imax;002;MDS2;46.1 A
+P128;Imax;003;MDS3;46.1 A
+P128;Imax;004;MDS4;46.1 A
+P216;Smooth n/f(FWD);001;MDS1;4.8 ms
+P223;Smooth n/f(act);001;MDS1;0 ms
+P235;n/f-Reg Gain 1;001;MDS1;3.0 
+P235;n/f-Reg Gain 1;002;MDS2;3.0 
+P235;n/f-Reg Gain 1;003;MDS3;3.0 
+P235;n/f-Reg Gain 1;004;MDS4;3.0 
+P236;n/f-Reg. Gain2;001;MDS1;3.0 
+P236;n/f-Reg. Gain2;002;MDS2;3.0 
+P236;n/f-Reg. Gain2;003;MDS3;3.0 
+P236;n/f-Reg. Gain2;004;MDS4;3.0 
+P273;Smooth Isq(set);001;MDS1;7 ms
+P273;Smooth Isq(set);002;MDS2;7 ms
+P273;Smooth Isq(set);003;MDS3;7 ms
+P273;Smooth Isq(set);004;MDS4;7 ms
+P274;Isq(set) grad.;001;MDS1;124.0 A
+P274;Isq(set) grad.;002;MDS2;136.0 A
+P274;Isq(set) grad.;003;MDS3;136.0 A
+P274;Isq(set) grad.;004;MDS4;136.0 A
+P283;Current Reg Gain;001;MDS1;0.181 
+P283;Current Reg Gain;002;MDS2;0.156 
+P283;Current Reg Gain;003;MDS3;0.156 
+P283;Current Reg Gain;004;MDS4;0.156 
+P284;Current Reg Time;001;MDS1;4.8 ms
+P284;Current Reg Time;002;MDS2;4.8 ms
+P284;Current Reg Time;003;MDS3;4.8 ms
+P284;Current Reg Time;004;MDS4;4.8 ms
+P293;Field Weak Freq;001;MDS1;52.63 Hz
+P303;Smooth Flux(Set);001;MDS1;10 ms
+P303;Smooth Flux(Set);002;MDS2;10 ms
+P303;Smooth Flux(Set);003;MDS3;10 ms
+P303;Smooth Flux(Set);004;MDS4;10 ms
+P306;EMF(max);001;MDS1;455 V
+P306;EMF(max);002;MDS2;479 V
+P306;EMF(max);003;MDS3;479 V
+P306;EMF(max);004;MDS4;479 V
+P315;cEMF Reg Gain;001;MDS1;0.335 
+P315;cEMF Reg Gain;002;MDS2;0.212 
+P315;cEMF Reg Gain;003;MDS3;0.212 
+P315;cEMF Reg Gain;004;MDS4;0.212 
+P316;cEMF Reg Time;001;MDS1;38.0 ms
+P316;cEMF Reg Time;002;MDS2;30.0 ms
+P316;cEMF Reg Time;003;MDS3;30.0 ms
+P316;cEMF Reg Time;004;MDS4;30.0 ms
+P319;Boost Amps;001;MDS1;15.5 A
+P319;Boost Amps;002;MDS2;17.0 A
+P319;Boost Amps;003;MDS3;17.0 A
+P319;Boost Amps;004;MDS4;17.0 A
+P325;Boost Volts;001;MDS1;9.0 V
+P325;Boost Volts;002;MDS2;12.0 V
+P325;Boost Volts;003;MDS3;12.0 V
+P325;Boost Volts;004;MDS4;12.0 V
+P337;Reson Damp Gain;001;MDS1;0.025 
+P348;Dead Time Comp.;000;MDS1;[0] off 
+P350;Ref Amps;000;MDS1;31.0 A
+P351;Ref Volts;000;MDS1;380 V
+P352;Ref Frequency;000;MDS1;35.00 Hz
+P353;Ref Speed;000;MDS1;700 min¯¹
+P354;Ref Torque;000;MDS1;130.00 Nm
+P375;Ground Flt Test;000;MDS1;[0] not active 
+P380;Mot Tmp Warning;001;MDS1;110 °C
+P381;Mot Tmp Fault;001;MDS1;145 °C
+P383;Mot ThermT-Const;001;MDS1;0 s
+P384;Mot Load Limits;001;WARN;120 %
+P384;Mot Load Limits;002;FLT;140 %
+P388;Motor Weight;001;MDS1;111 kg
+P388;Motor Weight;002;MDS2;112 kg
+P388;Motor Weight;003;MDS3;112 kg
+P388;Motor Weight;004;MDS4;112 kg
+P392;Iron Losses;001;MDS1;1.68 %
+P392;Iron Losses;002;MDS2;1.66 %
+P392;Iron Losses;003;MDS3;1.66 %
+P392;Iron Losses;004;MDS4;1.66 %
+P396;DC Braking Amps;001;MDS1;31.0 A
+P396;DC Braking Amps;002;MDS2;34.0 A
+P396;DC Braking Amps;003;MDS3;34.0 A
+P396;DC Braking Amps;004;MDS4;34.0 A
+P431;MOP Accel Time;000;MDS4;0.5 s
+P432;MOP Decel Time;000;MDS4;0.5 s
+P443;S.MainSetpoint;001;BiCoDS 1;K11  AI1 Setpoint 
+P462;Accel. Time;001;FDS 1;0.8 
+P464;Decel. Time;001;FDS 1;0.8 
+P469;Ramp StartSmooth;001;FDS 1;0.10 s
+P470;Ramp End Smooth;001;FDS 1;0.10 s
+P494;FixTorque 1 Gain;001;FDS 1;120.00 %
+P500;Scale TorqLim2;001;FDS 1;120.00 %
+P525;Fly Search Amps;001;MDS1;12.7 A
+P525;Fly Search Amps;002;MDS2;12.2 A
+P525;Fly Search Amps;003;MDS3;12.2 A
+P525;Fly Search Amps;004;MDS4;12.2 A
+P554;S.ON/OFF1;001;BiCoDS 1;B20  DigIn 6 
+P554;S.ON/OFF1;002;BiCoDS 2;B0  FixBinector 0 
+P556;S.2 OFF2(coast);001;BiCoDS 1;B16  DigIn 4 
+P564;S.Setp Release;001;BiCoDS 1;B20  DigIn 6 
+P566;S.2 Fault Reset;001;BiCoDS 1;B10  DigIn 1 
+P567;S.3 Fault Reset;002;BiCoDS 2;B0  FixBinector 0 
+P571;S.FWD Speed;001;BiCoDS 1;B19  DigIn 5 inv. 
+P572;S.REV Speed;001;BiCoDS 1;B18  DigIn 5 
+P590;S.BICO DSet;000;BiCoDS 1;B0  FixBinector 0 
+P600;ContactorMsgTime;000;BiCoDS 1;0 ms
+P602;Excitation Time;001;MDS1;0.67 s
+P602;Excitation Time;002;MDS2;0.47 s
+P602;Excitation Time;003;MDS3;0.47 s
+P602;Excitation Time;004;MDS4;0.47 s
+P603;De-MagnetizeTime;001;MDS1;0.67 s
+P603;De-MagnetizeTime;002;MDS2;0.47 s
+P603;De-MagnetizeTime;003;MDS3;0.47 s
+P603;De-MagnetizeTime;004;MDS4;0.47 s
+P605;BrakeCtrl;000;MDS4;[1] Brake w/o Chkbk 
+P606;BrakeOpenTime;000;MDS4;0.10 s
+P607;BrakeCloseTime;000;MDS4;1.00 s
+P608;S.BrakeOpen;001;MDS4;B275  Open Brake 
+P610;S.BrakeThresh1;000;MDS4;K11  AI1 Setpoint 
+P615;S.BrakeThresh2;000;MDS4;K11  AI1 Setpoint 
+P616;BrakeThresh2;000;MDS4;0.0 %
+P617;BrakeThresh2Time;000;MDS4;1.00 s
+P651;S.DigOut1;001;BiCoDS 1;B0  FixBinector 0 
+P652;S.DigOut2;001;BiCoDS 1;B121  CompV not OK 
+P653;S.DigOut3;001;BiCoDS 1;B106  Fault 
+P700;SCom BusAddr;001;Ser.Interface1;1 
+P701;SCom Baud;001;Ser.Interface1;[8] 38400 Baud 
+P792;Perm Deviation;001;FDS 1;8.0 %
+P795;S.Comp ActV;000;FDS 1;K11  AI1 Setpoint 
+P796;Compare Value;001;FDS 1;1.0 %
+P797;Compare Hyst;001;FDS 1;0.5 %
+P798;Compare Time;001;FDS 1;0.5 s
+P805;PullOut/BlckTime;001;MDS1;12.00 s
+P843;VCS RAM Val;000;MDS1;0x4502 
+P897;Menu Select;000;MDS1;[7] Upr/fr. Access 
+P927;Parameter Access;000;MDS1;0000000001111111 
+P952;# of Faults;000;MDS1;7 

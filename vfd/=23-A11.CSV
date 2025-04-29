@@ -1,0 +1,146 @@
+Source file: =23-A11.dnl
+Date: 29.04.2025
+Time: 08:35
+User name: MASTERDRIVES MC Plus
+Device type: MASTERDRIVES MC Plus
+SW version: 01.6
+Bus address: 0
+;;;;
+MFLB: 6SE70 .. [14] 21-8TP50                        
+Converter supply voltage: 540 V
+Converter current(n): 17.5 A
+Converter power(n): 7.5 kW
+Date of generation: 26.4.2005
+Operating hours: 2458.15.3345
+Serial number (FID): 0x600  / 0x4243
+Personal identification number (PIN): 0xFFFF / 0xFFFF
+
+;Basic board;Slot A;Slot B;Slot C
+Software version;1.6;0.0;0.0;0.0
+Software ID;0.5;0.0;0.0;0.0
+Board code;94;0;111;114
+Board ID;255;0;255;254
+
+Faults;actual;last;before-last
+Fault memory;0;8;8
+Fault value;0;0;0
+
+P No.;Par.- text;Ind.;Index text;Par. value
+;;;;
+P032;Src Disp Conn;001;;KK129  n(act) % Mach 
+P053;Parameter Access;000;;0000000000011111 
+P060;Menu Select;000;;[7] Upr/fr. Access 
+P070;Order No. 6SE70.;000;;[14] 21-8TP50 
+P071;Line Volts;000;;540 V
+P072;Rtd Drive Amps;000;;17.5 A
+P073;Rtd Drive Power;000;;7.5 kW
+P095;Select Mot Type;000;;[2] 1PH7 / 1PL6 
+P097;Select 1PH7;000;;[5] 1PH7105-2_F 
+P101;Mot Rtd Volts;000;;398 V
+P102;Motor Rtd Amps;000;;17.20 A
+P103;Mot No Load Amps;000;;8.19 A
+P104;MotPwrFactor;000;;0.773 
+P107;Mot Rtd Freq;000;;60.0 Hz
+P108;Mot Rtd Speed;000;;1750 min¯¹
+P113;Mot Rtd Torque;000;;43.70 Nm
+P121;Stator Resist;000;;270 mOhm
+P122;Tot Leak React;000;;2883 mOhm
+P123;Stator React;000;;25.17 Ohm
+P124;Rotor TimeConst;000;;246 ms
+P128;Max Current;000;;35.0 A
+P130;Select MotEncod;000;;[1] SBR Res. 2-pole 
+P139;ConfSetpEnc;000;;0x33 
+P150;SBP Config;002;Technol. encode;0x33 
+P152;extEnAVWF(befDP);001;Technol. encode;5 
+P153;extEnAVWF(aftDP);001;Technol. encode;86171969 
+P166;ConfPosSensMEnc;001;ModExtPosSens;0x1 
+P169;extEnAVWF(befDP);000;ModExtPosSens;5 
+P170;extEnAVWF(aftDP);000;ModExtPosSens;86171969 
+P223;Smooth n(act);000;ModExtPosSens;1.0 ms
+P231;n(act)_filter;001;Filt mot encod;290 
+P235;n-Reg Gain1;001;FDS 1;11.0 
+P236;n-RegGain2;001;FDS 1;0.0 
+P238;n-Reg Character;000;FDS 1;1 
+P240;n-Reg Time;001;FDS 1;20 ms
+P263;FSetpTorq(Lim1);001;FDS 1;200.0 %
+P264;FSetpTorq(Lim2);001;FDS 1;-200.0 %
+P293;FieldWKFreq;000;FDS 1;47.0 Hz
+P294;Select Flux Reg;000;FDS 1;[1] OL controlled 
+P350;Ref Amps;000;FDS 1;17.5 A
+P351;Ref Volts;000;FDS 1;398 V
+P352;Ref Frequency;000;FDS 1;52 Hz
+P353;Ref Speed;001;left of comma;935 min¯¹
+P353;Ref Speed;002;right of comma;3000 min¯¹
+P354;Ref Torque;000;right of comma;45.0 Nm
+P355;MachRefSpeed;001;left of comma;916 min¯¹
+P355;MachRefSpeed;002;right of comma;6666 min¯¹
+P367;Select Reg Type;000;right of comma;[3] Speed Control 
+P443;Src MainSetpoint;001;BiCoDS 1;K11  AnaIn Setp 
+P452;n(max,FWDSpeed);001;FDS 1;150.0 %
+P453;n(max,REVSpeed);001;FDS 1;-150.0 %
+P462;Accel. Time;001;FDS 1;0.06 s
+P464;Decel. Time;001;FDS 1;0.06 s
+P554;Src ON/OFF1;001;BiCoDS 1;B20  DigIn 6 
+P556;Src2 OFF2(coast);001;BiCoDS 1;B16  DigIn 4 
+P565;Src1 Fault Reset;001;BiCoDS 1;B0  FixBinector 0 
+P566;Src2 Fault Reset;001;BiCoDS 1;B10  DigIn 1 
+P602;Excitation Time;000;BiCoDS 1;0.56 s
+P603;De-MagnetizeTime;000;BiCoDS 1;0.56 s
+P630;AnaIn Scale;000;BiCoDS 1;1.11 
+P631;AnaIn Offset;000;BiCoDS 1;1.00 %
+P640;Src AnaOut;001;BiCoDS 1;KK91  n(act) 
+P653;Src DigOut3;001;BiCoDS 1;B106  Fault 
+P701;SCom Baud;001;Ser.Interface1;[8] 38400 Baud 
+P772;SrcEnRGenByp;000;Ser.Interface1;B0  FixBinector 0 
+P792;Perm Deviation;001;FDS 1;10.0 %
+P843;DSP RAM Value;000;FDS 1;768 
+P897;Menu Select;000;FDS 1;[7] Upr/fr. Access 
+P922;Telegram Select;000;FDS 1;0 
+P927;Parameter Access;000;FDS 1;0000000000011111 
+P952;# of Faults;000;FDS 1;7 
+U015;FixSetp 30;001;FDS 1;19884108 
+U016;FixSetp 31;001;FDS 1;20000000 
+U017;FixSetp 32;001;FDS 1;65536 
+U129;FSetpConnLimitr1;001;FDS 1;200.00 %
+U130;Src ConnLimitr1;002;Input X;K11  AnaIn Setp 
+U130;Src ConnLimitr1;003;Limit B-;K0  FixConn 0% 
+U405;SrcMulDiv32_1_32;000;Limit B-;KK128  n(act) Mach 
+U406;SrcMulDiv32_1_16;001;Limit B-;KK416  FIXSETP KK U016 
+U406;SrcMulDiv32_1_16;002;Limit B-;KK417  FIXSETP KK U017 
+U480;SrcTraceInput;001;Channel 1;KK91  n(act) 
+U480;SrcTraceInput;002;Channel 2;KK150  n (set,smooth) 
+U480;SrcTraceInput;003;Channel 3;KK602  MulDiv KK 1.12 
+U482;TraceSampleTime;001;Channel 1;4 
+U482;TraceSampleTime;002;Channel 2;4 
+U482;TraceSampleTime;003;Channel 3;4 
+U483;SrcTriggerInput;001;Channel 1;KK150  n (set,smooth) 
+U483;SrcTriggerInput;002;Channel 2;KK150  n (set,smooth) 
+U483;SrcTriggerInput;003;Channel 3;KK150  n (set,smooth) 
+U486;TriggerCondition;001;Channel 1;[4] Inp<>Thresh 
+U486;TriggerCondition;002;Channel 2;[4] Inp<>Thresh 
+U486;TriggerCondition;003;Channel 3;[4] Inp<>Thresh 
+U487;PreTrigger;001;Channel 1;10 %
+U487;PreTrigger;002;Channel 2;10 %
+U487;PreTrigger;003;Channel 3;10 %
+U617;Check Table;001;Check Tab 1;1 
+U617;Check Table;002;Check Tab 2;1 
+U617;Check Table;003;Check Tab 3;10 
+U617;Check Table;004;Check Tab 4;10 
+U617;Check Table;005;Check Tab 5;10 
+U617;Check Table;006;Check Tab 6;10 
+U617;Check Table;007;Check Tab 7;10 
+U617;Check Table;008;Check Tab 8;10 
+U620;Table Width;003;Table 3;0 
+U620;Table Width;004;Table 4;0 
+U620;Table Width;005;Table 5;0 
+U620;Table Width;006;Table 6;0 
+U620;Table Width;007;Table 7;0 
+U620;Table Width;008;Table 8;0 
+U950;Sampling Times1;017;Pos Machine Enc;3 
+U950;Sampling Times1;044;FixSetp 30;3 
+U950;Sampling Times1;045;FixSetp 31;3 
+U950;Sampling Times1;046;FixSetp 32;3 
+U951;Sampling Times2;012;MulDiv32 1;3 
+U951;Sampling Times2;074;Limitr1 1Word;2 
+U976;FID;001;Limitr1 1Word;0x600 
+U976;FID;002;Limitr1 1Word;0x4243 

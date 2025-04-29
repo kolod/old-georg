@@ -1,0 +1,98 @@
+Source file: =32-A11.dnl
+Date: 29.04.2025
+Time: 08:35
+User name: MASTERDRIVES MC Plus
+Device type: MASTERDRIVES MC Plus
+SW version: 01.6
+Bus address: 0
+;;;;
+MFLB: 6SE70 .. [8] 21-0TP50                        
+Converter supply voltage: 540 V
+Converter current(n): 10.0 A
+Converter power(n): 4.0 kW
+Date of generation: 26.4.2005
+Operating hours: 2464.15.2962
+Serial number (FID): 0x701  / 0x2296
+Personal identification number (PIN): 0xFFFF / 0xFFFF
+
+;Basic board;Slot A;Slot B;Slot C
+Software version;1.6;0.0;0.0;0.0
+Software ID;0.5;0.0;0.0;0.0
+Board code;94;0;0;113
+Board ID;255;0;0;38399
+
+Faults;actual;last;before-last
+Fault memory;0;8;8
+Fault value;0;0;0
+
+P No.;Par.- text;Ind.;Index text;Par. value
+;;;;
+P053;Parameter Access;000;;0000000001111111 
+P060;Menu Select;000;;[7] Upr/fr. Access 
+P070;Order No. 6SE70.;000;;[8] 21-0TP50 
+P071;Line Volts;000;;540 V
+P072;Rtd Drive Amps;000;;10.0 A
+P073;Rtd Drive Power;000;;4.0 kW
+P095;Select Mot Type;000;;[2] 1PH7 / 1PL6 
+P097;Select 1PH7;000;;[1] 1PH7101-2_F 
+P101;Mot Rtd Volts;000;;398 V
+P102;Motor Rtd Amps;000;;9.70 A
+P103;Mot No Load Amps;000;;4.86 A
+P104;MotPwrFactor;000;;0.748 
+P107;Mot Rtd Freq;000;;60.0 Hz
+P108;Mot Rtd Speed;000;;1750 min¯¹
+P113;Mot Rtd Torque;000;;23.50 Nm
+P121;Stator Resist;000;;480 mOhm
+P122;Tot Leak React;000;;5463 mOhm
+P123;Stator React;000;;41.81 Ohm
+P124;Rotor TimeConst;000;;230 ms
+P128;Max Current;000;;9.7 A
+P130;Select MotEncod;000;;[4] SBM Multiturn 
+P235;n-Reg Gain1;001;FDS 1;55.0 
+P240;n-Reg Time;001;FDS 1;10 ms
+P263;FSetpTorq(Lim1);001;FDS 1;200.0 %
+P264;FSetpTorq(Lim2);001;FDS 1;-200.0 %
+P293;FieldWKFreq;000;FDS 1;47.0 Hz
+P294;Select Flux Reg;000;FDS 1;[1] OL controlled 
+P350;Ref Amps;000;FDS 1;9.7 A
+P351;Ref Volts;000;FDS 1;398 V
+P352;Ref Frequency;000;FDS 1;60 Hz
+P353;Ref Speed;001;left of comma;1004 min¯¹
+P354;Ref Torque;000;left of comma;23.5 Nm
+P443;Src MainSetpoint;001;BiCoDS 1;K11  AnaIn Setp 
+P452;n(max,FWDSpeed);001;FDS 1;105.0 %
+P453;n(max,REVSpeed);001;FDS 1;-105.0 %
+P462;Accel. Time;001;FDS 1;0.00 s
+P464;Decel. Time;001;FDS 1;0.00 s
+P554;Src ON/OFF1;001;BiCoDS 1;B20  DigIn 6 
+P556;Src2 OFF2(coast);001;BiCoDS 1;B16  DigIn 4 
+P565;Src1 Fault Reset;001;BiCoDS 1;B10  DigIn 1 
+P567;Src3 Fault Reset;002;BiCoDS 2;B0  FixBinector 0 
+P595;Cl/AntiClRot;000;BiCoDS 2;[1] Anticlockw. 
+P602;Excitation Time;000;BiCoDS 2;0.53 s
+P603;De-MagnetizeTime;000;BiCoDS 2;0.53 s
+P630;AnaIn Scale;000;BiCoDS 2;1.11 
+P640;Src AnaOut;001;BiCoDS 1;KK91  n(act) 
+P653;Src DigOut3;001;BiCoDS 1;B106  Fault 
+P701;SCom Baud;001;Ser.Interface1;[8] 38400 Baud 
+P707;SrcSCom1TrnsData;002;W02;KK91  n(act) 
+P843;DSP RAM Value;000;W02;768 
+P897;Menu Select;000;W02;[7] Upr/fr. Access 
+P927;Parameter Access;000;W02;0000000001111111 
+P952;# of Faults;000;W02;7 
+U617;Check Table;001;Check Tab 1;1 
+U617;Check Table;002;Check Tab 2;1 
+U617;Check Table;003;Check Tab 3;10 
+U617;Check Table;004;Check Tab 4;10 
+U617;Check Table;005;Check Tab 5;10 
+U617;Check Table;006;Check Tab 6;10 
+U617;Check Table;007;Check Tab 7;10 
+U617;Check Table;008;Check Tab 8;10 
+U620;Table Width;003;Table 3;0 
+U620;Table Width;004;Table 4;0 
+U620;Table Width;005;Table 5;0 
+U620;Table Width;006;Table 6;0 
+U620;Table Width;007;Table 7;0 
+U620;Table Width;008;Table 8;0 
+U976;FID;001;Table 8;0x701 
+U976;FID;002;Table 8;0x2296 
