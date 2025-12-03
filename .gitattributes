@@ -1,0 +1,3 @@
+# Set CRLF line ending for all *.dnl files
+# needed for Siemens Drive Monitor software
+*.dnl text eol=crlf
